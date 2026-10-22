@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 01: Getting to Know HTML | .NET Pathshala</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      :root {
+        --primary: #2563eb;
+        --primary-light: #eff6ff;
+        --bg-color: #f8fafc;
+        --card-bg: #ffffff;
+        --text-main: #0f172a;
+        --text-muted: #475569;
+        --border-color: #e2e8f0;
+        --code-bg: #0f172a;
+        --code-header: #1e293b;
+        --radius-md: 8px;
+        --radius-lg: 12px;
+        --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+        --shadow-md:
+          0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      }
+
+      /* Base Layout */
+      body {
+        background-color: var(--bg-color);
+      }
+
+      .layout-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 100px 24px 40px;
+        display: grid;
+        grid-template-columns: 260px 1fr;
+        gap: 40px;
+      }
+
+      /* Sidebar Navigation */
+      .sidebar {
+        position: sticky;
+        top: 100px;
+        height: calc(100vh - 120px); /* Fixed syntax error here */
+        overflow-y: auto;
+      }
+
+      .sidebar::-webkit-scrollbar {
+        width: 4px;
+      }
+      .sidebar::-webkit-scrollbar-thumb {
+        background-color: var(--border-color);
+        border-radius: 4px;
+      }
+
+      .sidebar h3 {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--text-muted);
+        margin-bottom: 16px;
+        font-weight: 700;
+      }
+
+      .sidebar ol {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 0;
+        margin: 0;
+      }
+
+      .sidebar a {
+        text-decoration: none;
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        font-weight: 500;
+        padding: 8px 12px;
+        border-radius: var(--radius-md);
+        display: block;
+        transition: all 0.2s ease;
+        border-left: 3px solid transparent;
+      }
+
+      .sidebar a:hover {
+        color: var(--primary);
+        background-color: var(--primary-light);
+        border-left-color: var(--primary);
+      }
+
+      /* Main Content Cards */
+      .main-content {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        max-width: 100%;
+      }
+
+      .card {
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-lg);
+        padding: 32px;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .card-badge {
+        display: inline-block;
+        background-color: var(--primary-light);
+        color: var(--primary);
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 4px 10px;
+        border-radius: 9999px;
+        margin-bottom: 12px;
+      }
+
+      .card h1 {
+        font-size: 1.75rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+        color: var(--text-main);
+        line-height: 1.3;
+      }
+
+      .card h3 {
+        font-size: 1.1rem;
+        margin: 24px 0 12px;
+        color: var(--text-main);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .card p {
+        color: var(--text-muted);
+        margin-bottom: 16px;
+        line-height: 1.6;
+      }
+
+      code.inline-code {
+        background-color: #f1f5f9;
+        color: #db2777;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: "Fira Code", monospace;
+        font-size: 0.85em;
+      }
+
+      /* Terminal Style Code Blocks */
+      .code-window {
+        background-color: var(--code-bg);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        margin-top: 16px;
+        box-shadow: var(--shadow-md);
+        position: relative;
+        width: 100%;
+      }
+
+      .code-header {
+        background-color: var(--code-header);
+        padding: 10px 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .mac-dots {
+        display: flex;
+        gap: 6px;
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+      }
+
+      .dot-red {
+        background-color: #f43f5e;
+      }
+      .dot-yellow {
+        background-color: #f59e0b;
+      }
+      .dot-green {
+        background-color: #10b981;
+      }
+
+      /* Copy Button Styles */
+      .copy-btn {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #e2e8f0;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 4px 12px;
+        border-radius: 6px;
+        font-size: 0.75rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-family: "Inter", sans-serif;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .copy-btn:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        color: #ffffff;
+      }
+
+      .copy-btn.copied {
+        background-color: #10b981;
+        border-color: #10b981;
+        color: white;
+      }
+
+      .code-window pre {
+        margin: 0;
+        padding: 20px;
+        overflow-x: auto; /* Ensures long code doesn't break mobile layout */
+      }
+
+      .code-window code {
+        font-family: "Fira Code", monospace;
+        font-size: 0.9rem;
+        color: #e2e8f0;
+        line-height: 1.5;
+        white-space: pre;
+      }
+
+      /* Syntax highlighting colors */
+      .tag {
+        color: #f43f5e;
+        background-color: transparent;
+      }
+      .attr {
+        color: #fcd34d;
+      }
+      .val {
+        color: #6ee7b7;
+      }
+      .comment {
+        color: #64748b;
+      }
+      .doctype {
+        color: #60a5fa;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 860px) {
+        .layout-container {
+          grid-template-columns: 1fr;
+          padding: 80px 16px 30px; /* Adjusted padding for mobile */
+          gap: 24px;
+        }
+
+        .sidebar {
+          position: static; /* Removes sticky on mobile so it scrolls naturally */
+          height: auto;
+          background-color: var(--card-bg);
+          padding: 20px;
+          border-radius: var(--radius-lg);
+          border: 1px solid var(--border-color);
+          box-shadow: var(--shadow-sm);
+        }
+
+        .card {
+          padding: 20px; /* Smaller padding for mobile cards */
+        }
+
+        .card h1 {
+          font-size: 1.5rem; /* Slightly smaller heading on mobile */
+        }
+
+        .code-window pre {
+          padding: 16px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .card h1 {
+          font-size: 1.25rem;
+        }
+        .code-window code {
+          font-size: 0.8rem; /* Smaller code font on very small screens */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar" id="navbar">
+      <div class="container nav-inner">
+        <div class="logo">
+          <a href="index.html">&lt;/&gt; .NET <span>Pathshala</span></a>
+        </div>
+        <nav>
+          <ul class="menu" id="menu">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#programs">Tech Stack</a></li>
+
+            <li class="dropdown">
+              <a href="#chapters" style="cursor: pointer">HTML & CSS ▾</a>
+              <div class="dropdown-content">
+                <a href="chapter_01.html">01. Getting to Know HTML</a>
+                <!-- Fixed Typo Here -->
+                <a href="chapter_02.html">02. Basic HTML Elements</a>
+                <a href="chapter_03.html">03. HTML Styles & Formatting</a>
+                <a href="chapter_04.html">04. Semantic HTML</a>
+                <a href="chapter_05.html">05. Web Forms</a>
+                <a href="chapter_06.html">06. HTML Multimedia</a>
+                <a href="chapter_07.html">07. HTML Graphics (SVG & Canvas)</a>
+                <a href="chapter_08.html">08. Advanced HTML</a>
+                <a href="chapter_09.html">09. HTML Events</a>
+                <a href="chapter_10.html">10. HTML APIs</a>
+                <a href="chapter_11.html">11. Getting to Know CSS</a>
+                <a href="chapter_12.html">12. CSS Selectors</a>
+                <a href="chapter_13.html">13. CSS Cascading</a>
+                <a href="chapter_14.html">14. CSS Box Model</a>
+                <a href="chapter_15.html">15. CSS Colors</a>
+                <a href="chapter_16.html">16. CSS Text & Fonts</a>
+                <a href="chapter_17.html">17. CSS Backgrounds</a>
+                <a href="chapter_18.html">18. CSS Display & Effects</a>
+                <a href="chapter_19.html">19. CSS Layout (Flexbox & Grid)</a>
+                <a href="chapter_20.html">20. CSS Transitions & Animations</a>
+                <a href="chapter_21.html">21. Advanced CSS</a>
+                <a href="chapter_22.html">22. Responsive CSS</a>
+              </div>
+            </li>
+
+            <li>
+              <a href="#admission" class="btn small">Enroll Now</a>
+            </li>
+          </ul>
+        </nav>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- chapter er content bosbe -->
+
+    <div class="layout-container">
+      <nav class="sidebar">
+        <h3>Table of Contents</h3>
+        <ol>
+          <li><a href="#intro">1.1 Two Types of Elements</a></li>
+          <li><a href="#structure">1.2 Document Structure</a></li>
+          <li><a href="#first-page">1.3 Your First Webpage</a></li>
+          <li><a href="#encoding">1.4 Character Encoding</a></li>
+          <li><a href="#attributes">1.5 Element Attributes</a></li>
+          <li><a href="#favicon">1.6 Favorite Icon</a></li>
+          <li><a href="#comments">1.7 Comments</a></li>
+        </ol>
+      </nav>
+
+      <main class="main-content">
+        <section id="intro" class="card">
+          <span class="card-badge">Section 1.1</span>
+          <h1>Two Types of HTML Elements</h1>
+          <p>
+            In HTML, there are primarily two types of elements you will use to
+            structure your content:
+          </p>
+
+          <h3>1. Container Elements (Normal Elements)</h3>
+          <p>
+            These elements have an opening tag and a closing tag. They wrap
+            around content (like text or other elements).
+          </p>
+
+          <div class="code-window">
+            <div class="code-header">
+              <div class="mac-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+              </div>
+              <button class="copy-btn">Copy</button>
+            </div>
+            <pre><code>&lt;<span class="tag">h1</span>&gt;Welcome to DotNet Pathshala&lt;/<span class="tag">h1</span>&gt;
+&lt;<span class="tag">p</span>&gt;Start your web development journey today.&lt;/<span class="tag">p</span>&gt;</code></pre>
+          </div>
+
+          <h3>2. Void Elements (Empty Elements)</h3>
+          <p>
+            These elements do not have a closing tag because they cannot contain
+            content. They are used for inserting things like line breaks or
+            images.
+          </p>
+
+          <div class="code-window">
+            <div class="code-header">
+              <div class="mac-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+              </div>
+              <button class="copy-btn">Copy</button>
+            </div>
+            <pre><code>&lt;<span class="tag">hr</span>&gt; <span class="comment">&lt;!-- (Horizontal Rule) --&gt;</span>
+&lt;<span class="tag">br</span>&gt; <span class="comment">&lt;!-- (Line Break) --&gt;</span>
+&lt;<span class="tag">img</span> <span class="attr">src</span>=<span class="val">"logo.png"</span> <span class="attr">alt</span>=<span class="val">"Logo"</span>&gt; <span class="comment">&lt;!-- (Image) --&gt;</span></code></pre>
+          </div>
+        </section>
+
+        <section id="structure" class="card">
+          <span class="card-badge">Section 1.2</span>
+          <h1>HTML Document Structure</h1>
+          <p>
+            Every modern webpage follows a strict structure (DOM) so that
+            browsers and search engines can understand it properly.
+          </p>
+
+          <div class="code-window">
+            <div class="code-header">
+              <div class="mac-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+              </div>
+              <button class="copy-btn">Copy</button>
+            </div>
+            <pre><code><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+&lt;<span class="tag">html</span>&gt;
+&lt;<span class="tag">head</span>&gt;
+    <span class="comment">&lt;!-- Metadata, Title, CSS links --&gt;</span>
+&lt;/<span class="tag">head</span>&gt;
+&lt;<span class="tag">body</span>&gt;
+    <span class="comment">&lt;!-- Visible content (Text, Images, Buttons) --&gt;</span>
+&lt;/<span class="tag">body</span>&gt;
+&lt;/<span class="tag">html</span>&gt;</code></pre>
+          </div>
+        </section>
+
+        <section id="first-page" class="card">
+          <span class="card-badge">Section 1.3</span>
+          <h1>Your First Webpage</h1>
+          <p>
+            Let's create a simple page. The
+            <code class="inline-code">&lt;title&gt;</code> sets the name in the
+            browser tab, and the <code class="inline-code">&lt;h1&gt;</code> is
+            the main heading on the page.
+          </p>
+
+          <div class="code-window">
+            <div class="code-header">
+              <div class="mac-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+              </div>
+              <button class="copy-btn">Copy</button>
+            </div>
+            <pre><code><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+&lt;<span class="tag">html</span>&gt;
+&lt;<span class="tag">head</span>&gt;
+    &lt;<span class="tag">title</span>&gt;My First Site&lt;/<span class="tag">title</span>&gt;
+&lt;/<span class="tag">head</span>&gt;
+&lt;<span class="tag">body</span>&gt;
+    &lt;<span class="tag">h1</span>&gt;Hello World!&lt;/<span class="tag">h1</span>&gt;
+    &lt;<span class="tag">p</span>&gt;This is my first paragraph.&lt;/<span class="tag">p</span>&gt;
+&lt;/<span class="tag">body</span>&gt;
+&lt;/<span class="tag">html</span>&gt;</code></pre>
+          </div>
+          <p style="margin-top: 16px">
+            When you save this as <code class="inline-code">.html</code> and
+            open it in Chrome, you will see a bold heading and a paragraph.
+          </p>
+        </section>
+
+        <section id="encoding" class="card">
+          <span class="card-badge">Section 1.4</span>
+          <h1>Character Encoding</h1>
+          <p>
+            Character encoding dictates how text is processed. We declare it
+            using the meta tag so symbols and foreign characters display
+            properly.
+          </p>
+
+          <div class="code-window">
+            <div class="code-header">
+              <div class="mac-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+              </div>
+              <button class="copy-btn">Copy</button>
+            </div>
+            <pre><code>&lt;<span class="tag">meta</span> <span class="attr">charset</span>=<span class="val">"UTF-8"</span>&gt;</code></pre>
+          </div>
+        </section>
+
+        <section id="attributes" class="card">
+          <span class="card-badge">Section 1.5</span>
+          <h1>Element Attributes</h1>
+          <p>
+            Attributes provide extra information about elements. They are always
+            specified in the opening tag.
+          </p>
+
+          <div class="code-window">
+            <div class="code-header">
+              <div class="mac-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+              </div>
+              <button class="copy-btn">Copy</button>
+            </div>
+            <pre><code>&lt;<span class="tag">a</span> <span class="attr">href</span>=<span class="val">"https://google.com"</span> <span class="attr">target</span>=<span class="val">"_blank"</span>&gt;Visit Google&lt;/<span class="tag">a</span>&gt;</code></pre>
+          </div>
+        </section>
+
+        <section id="favicon" class="card">
+          <span class="card-badge">Section 1.6</span>
+          <h1>Favorite Icon</h1>
+          <p>
+            The favicon is a small icon shown next to your page title in the
+            browser tab.
+          </p>
+
+          <div class="code-window">
+            <div class="code-header">
+              <div class="mac-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+              </div>
+              <button class="copy-btn">Copy</button>
+            </div>
+            <pre><code>&lt;<span class="tag">link</span> <span class="attr">rel</span>=<span class="val">"icon"</span> <span class="attr">type</span>=<span class="val">"image/x-icon"</span> <span class="attr">href</span>=<span class="val">"/favicon.ico"</span>&gt;</code></pre>
+          </div>
+        </section>
+
+        <section id="comments" class="card">
+          <span class="card-badge">Section 1.7</span>
+          <h1>Comments</h1>
+          <p>
+            Comments are used by developers to leave notes for themselves or
+            others. The browser completely ignores them.
+          </p>
+
+          <div class="code-window">
+            <div class="code-header">
+              <div class="mac-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+              </div>
+              <button class="copy-btn">Copy</button>
+            </div>
+            <pre><code><span class="comment">&lt;!-- This is a single line comment --&gt;</span>
+
+<span class="comment">&lt;!-- 
+    This is a 
+    multi-line comment 
+--&gt;</span></code></pre>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const copyButtons = document.querySelectorAll(".copy-btn");
+
+        copyButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            const codeContainer = button.closest(".code-window");
+            const codeElement = codeContainer.querySelector("code");
+            const textToCopy = codeElement.innerText;
+
+            // Modern Clipboard API - no page jumping!
+            navigator.clipboard
+              .writeText(textToCopy)
+              .then(() => {
+                const originalText = button.innerText;
+                button.innerText = "Copied!";
+                button.classList.add("copied");
+                setTimeout(() => {
+                  button.innerText = originalText;
+                  button.classList.remove("copied");
+                }, 2000);
+              })
+              .catch((err) => {
+                console.error("Failed to copy: ", err);
+              });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
