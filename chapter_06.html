@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 06: HTML Multimedia | .NET Pathshala</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="navbar" id="navbar">
+      <div class="container nav-inner">
+        <div class="logo">
+          <a href="index.html">&lt;/&gt; .NET <span>Pathshala</span></a>
+        </div>
+        <nav>
+          <ul class="menu" id="menu">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#programs">Tech Stack</a></li>
+
+            <li class="dropdown">
+              <a href="#chapters" style="cursor: pointer">HTML & CSS ▾</a>
+              <div class="dropdown-content">
+                <a href="chapter_01.html">01. Getting to Know HTML</a>
+                <a href="chapter_02.html">02. Basic HTML Elements</a>
+                <a href="chapter_03.html">03. HTML Styles & Formatting</a>
+                <a href="chapter_04.html">04. Semantic HTML</a>
+                <a href="chapter_05.html">05. Web Forms</a>
+                <a href="chapter_06.html">06. HTML Multimedia</a>
+                <a href="chapter_07.html">07. HTML Graphics (SVG & Canvas)</a>
+                <a href="chapter_08.html">08. Advanced HTML</a>
+                <a href="chapter_09.html">09. HTML Events</a>
+                <a href="chapter_10.html">10. HTML APIs</a>
+                <a href="chapter_11.html">11. Getting to Know CSS</a>
+                <a href="chapter_12.html">12. CSS Selectors</a>
+                <a href="chapter_13.html">13. CSS Cascading</a>
+                <a href="chapter_14.html">14. CSS Box Model</a>
+                <a href="chapter_15.html">15. CSS Colors</a>
+                <a href="chapter_16.html">16. CSS Text & Fonts</a>
+                <a href="chapter_17.html">17. CSS Backgrounds</a>
+                <a href="chapter_18.html">18. CSS Display & Effects</a>
+                <a href="chapter_19.html">19. CSS Layout (Flexbox & Grid)</a>
+                <a href="chapter_20.html">20. CSS Transitions & Animations</a>
+                <a href="chapter_21.html">21. Advanced CSS</a>
+                <a href="chapter_22.html">22. Responsive CSS</a>
+              </div>
+            </li>
+
+            <li>
+              <a href="#admission" class="btn small">Enroll Now</a>
+            </li>
+          </ul>
+        </nav>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+    <div class="header-container">
+      <header class="page-header">
+        <span class="chapter-badge">Chapter 06</span>
+        <h1>HTML Multimedia</h1>
+        <h2>
+          "Discover how to integrate audio and video elements to create engaging
+          and dynamic web experiences"
+        </h2>
+      </header>
+    </div>
+
+    <div class="layout-container">
+      <nav class="sidebar">
+        <h3>Table of Contents</h3>
+        <ol>
+          <li>
+            <a href="#audio">6.1 HTML Audio</a>
+          </li>
+          <li>
+            <a href="#video">6.2 HTML Video</a>
+          </li>
+          <li>
+            <a href="#iframe">6.3 HTML Iframe</a>
+          </li>
+        </ol>
+      </nav>
+
+      <main class="main-content">
+        <section id="audio" class="card">
+          <span class="card-badge">Section 6.1</span>
+          <h1>HTML Audio</h1>
+          <p>
+            Use the <code class="inline-code">&lt;audio&gt;</code> tag to embed
+            sound content in a document, such as music or other audio streams.
+            <br /><br />
+            <strong>Common Attributes:</strong>
+            <code class="inline-code">controls</code>,
+            <code class="inline-code">autoplay</code>,
+            <code class="inline-code">muted</code>,
+            <code class="inline-code">loop</code>.
+          </p>
+
+          <h3>Code Example</h3>
+          <div class="code-window">
+            <div class="code-header">
+              <div class="mac-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+              </div>
+              <button class="copy-btn">Copy</button>
+            </div>
+            <pre><code>&lt;<span class="tag">audio</span> <span class="attr">controls</span> <span class="attr">autoplay</span> <span class="attr">loop</span> <span class="attr">muted</span>&gt;
+    &lt;<span class="tag">source</span> <span class="attr">src</span>=<span class="val">"file/Tujhe_Dekha_To.mp3"</span> <span class="attr">type</span>=<span class="val">"audio/mpeg"</span>&gt;
+    &lt;<span class="tag">source</span> <span class="attr">src</span>=<span class="val">"file/Tujhe_Dekha_To.ogg"</span> <span class="attr">type</span>=<span class="val">"audio/ogg"</span>&gt;
+    &lt;<span class="tag">source</span> <span class="attr">src</span>=<span class="val">"file/Tujhe_Dekha_To.wav"</span> <span class="attr">type</span>=<span class="val">"audio/wav"</span>&gt;
+    Your browser does not support the audio element.
+&lt;/<span class="tag">audio</span>&gt;</code></pre>
+          </div>
+
+          <h3>Visual Example</h3>
+          <div class="preview-window">
+            <span class="preview-label">Browser Output Preview</span>
+            <div class="media-box">
+              <audio controls autoplay loop muted>
+                <source src="file/Tujhe_Dekha_To.mp3" type="audio/mpeg" />
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </div>
+        </section>
+
+        <section id="video" class="card">
+          <span class="card-badge">Section 6.2</span>
+          <h1>HTML Video</h1>
+          <p>
+            The <code class="inline-code">&lt;video&gt;</code> tag is used to
+            embed video content. You can set the
+            <code class="inline-code">width</code> and
+            <code class="inline-code">height</code> attributes, and even add a
+            <code class="inline-code">poster</code> image that shows before the
+            video plays.
+          </p>
+
+          <h3>Code Example</h3>
+          <div class="code-window">
+            <div class="code-header">
+              <div class="mac-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+              </div>
+              <button class="copy-btn">Copy</button>
+            </div>
+            <pre><code>&lt;<span class="tag">video</span> <span class="attr">width</span>=<span class="val">"600"</span> <span class="attr">controls</span> <span class="attr">poster</span>=<span class="val">"thumbnail.jpg"</span>&gt;
+    &lt;<span class="tag">source</span> <span class="attr">src</span>=<span class="val">"video.mp4"</span> <span class="attr">type</span>=<span class="val">"video/mp4"</span>&gt;
+    &lt;<span class="tag">source</span> <span class="attr">src</span>=<span class="val">"video.ogg"</span> <span class="attr">type</span>=<span class="val">"video/ogg"</span>&gt;
+    Your browser does not support the video tag.
+&lt;/<span class="tag">video</span>&gt;</code></pre>
+          </div>
+
+          <h3>Visual Example</h3>
+          <div class="preview-window">
+            <span class="preview-label">Browser Output Preview</span>
+            <div class="media-box">
+              <!-- Placeholder video without src, just to show the UI -->
+              <video
+                controls
+                poster="https://via.placeholder.com/600x300/EEF2FF/4F46E5?text=Video+Thumbnail"
+              >
+                <source src="dummy.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </section>
+
+        <section id="iframe" class="card">
+          <span class="card-badge">Section 6.3</span>
+          <h1>HTML Iframe / YouTube Video</h1>
+          <p>
+            The <code class="inline-code">&lt;iframe&gt;</code> tag is used to
+            embed another document within the current HTML document. It is
+            commonly used to embed third-party media, such as YouTube videos,
+            using the <code class="inline-code">src</code>,
+            <code class="inline-code">width</code>, and
+            <code class="inline-code">height</code> attributes.
+          </p>
+
+          <h3>Code Example</h3>
+          <div class="code-window">
+            <div class="code-header">
+              <div class="mac-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+              </div>
+              <button class="copy-btn">Copy</button>
+            </div>
+            <pre><code>&lt;<span class="tag">iframe</span> 
+  <span class="attr">width</span>=<span class="val">"100%"</span> 
+  <span class="attr">height</span>=<span class="val">"315"</span> 
+  <span class="attr">src</span>=<span class="val">"https://www.youtube.com/embed/cNV5hLSa9H8"</span> 
+  <span class="attr">frameborder</span>=<span class="val">"0"</span> 
+  <span class="attr">allowfullscreen</span>&gt;
+&lt;/<span class="tag">iframe</span>&gt;</code></pre>
+          </div>
+
+          <h3>Visual Example</h3>
+          <div class="preview-window">
+            <span class="preview-label">Browser Output Preview</span>
+            <div class="media-box">
+              <iframe
+                width="100%"
+                height="315"
+                src="https://www.youtube.com/embed/cNV5hLSa9H8"
+                frameborder="0"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                "
+                allowfullscreen
+                style="border-radius: 4px; border: 1px solid #cbd5e1"
+              ></iframe>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer>
+      <div class="container foot-grid">
+        <div>
+          <a href="index.html" class="logo light"
+            >&lt;/&gt; .NET <span>Pathshala</span></a
+          >
+          <p>Building the next generation of full-stack software engineers.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#about">About Course</a></li>
+            <li><a href="#programs">Tech Stack</a></li>
+            <li><a href="#admission">Enroll</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>Dhaka, Bangladesh</li>
+            <li>+880 1234 567890</li>
+            <li>admission@dotnetpathshala.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copy">
+        &copy; <span id="year">2020</span> .NET Pathshala. All rights reserved.
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

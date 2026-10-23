@@ -99,3 +99,40 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const sidebarLinks = document.querySelectorAll(".sidebar a");
+
+  // সাইডবারের href অনুযায়ী মেইন কন্টেন্টের সেকশনগুলো খুঁজে বের করা
+  const sections = Array.from(sidebarLinks)
+    .map((link) => document.querySelector(link.getAttribute("href")))
+    .filter((section) => section !== null);
+
+  // স্ক্রল করার সময় কোন সেকশনটি স্ক্রিনে আছে তা বোঝার জন্য IntersectionObserver
+  const observerOptions = {
+    root: null,
+    rootMargin: "-120px 0px -40% 0px", // হেডারের হাইট অনুযায়ী এডজাস্ট করা
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // সব লিংক থেকে active ক্লাস রিমুভ করা
+        sidebarLinks.forEach((link) => link.classList.remove("active"));
+
+        // যে সেকশনটি স্ক্রিনে আছে, সাইডবারে তার লিংকে active ক্লাস অ্যাড করা
+        const activeLink = document.querySelector(
+          `.sidebar a[href="#${entry.target.id}"]`,
+        );
+        if (activeLink) {
+          activeLink.classList.add("active");
+        }
+      }
+    });
+  }, observerOptions);
+
+  // প্রতিটি সেকশনকে অবজার্ভ করা
+  sections.forEach((section) => {
+    observer.observe(section);
+  });
+});

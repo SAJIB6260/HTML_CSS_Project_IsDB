@@ -1,0 +1,1053 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 07: HTML Graphics | .NET Pathshala</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="navbar" id="navbar">
+      <div class="container nav-inner">
+        <div class="logo">
+          <a href="index.html">&lt;/&gt; .NET <span>Pathshala</span></a>
+        </div>
+        <nav>
+          <ul class="menu" id="menu">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#programs">Tech Stack</a></li>
+
+            <li class="dropdown">
+              <a href="#chapters" style="cursor: pointer">HTML & CSS ▾</a>
+              <div class="dropdown-content">
+                <a href="chapter_01.html">01. Getting to Know HTML</a>
+                <a href="chapter_02.html">02. Basic HTML Elements</a>
+                <a href="chapter_03.html">03. HTML Styles & Formatting</a>
+                <a href="chapter_04.html">04. Semantic HTML</a>
+                <a href="chapter_05.html">05. Web Forms</a>
+                <a href="chapter_06.html">06. HTML Multimedia</a>
+                <a href="chapter_07.html">07. HTML Graphics (SVG & Canvas)</a>
+                <a href="chapter_08.html">08. Advanced HTML</a>
+                <a href="chapter_09.html">09. HTML Events</a>
+                <a href="chapter_10.html">10. HTML APIs</a>
+                <a href="chapter_11.html">11. Getting to Know CSS</a>
+                <a href="chapter_12.html">12. CSS Selectors</a>
+                <a href="chapter_13.html">13. CSS Cascading</a>
+                <a href="chapter_14.html">14. CSS Box Model</a>
+                <a href="chapter_15.html">15. CSS Colors</a>
+                <a href="chapter_16.html">16. CSS Text & Fonts</a>
+                <a href="chapter_17.html">17. CSS Backgrounds</a>
+                <a href="chapter_18.html">18. CSS Display & Effects</a>
+                <a href="chapter_19.html">19. CSS Layout (Flexbox & Grid)</a>
+                <a href="chapter_20.html">20. CSS Transitions & Animations</a>
+                <a href="chapter_21.html">21. Advanced CSS</a>
+                <a href="chapter_22.html">22. Responsive CSS</a>
+              </div>
+            </li>
+
+            <li>
+              <a href="#admission" class="btn small">Enroll Now</a>
+            </li>
+          </ul>
+        </nav>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+    <div class="header-container">
+      <header class="page-header">
+        <span class="chapter-badge">Chapter 07</span>
+        <h1>HTML Graphics (SVG & Canvas)</h1>
+        <h2>
+          "Explore how to draw graphics, render shapes, and create scalable
+          vector images using HTML Canvas and SVG"
+        </h2>
+      </header>
+    </div>
+
+    <div class="layout-container">
+      <nav class="sidebar">
+        <h3>Table of Contents</h3>
+        <ol>
+          <li>
+            <a href="#svg">7.1 SVG Graphics</a>
+            <ul>
+              <li><a href="#svgRectangle">7.1.1 SVG Rectangle</a></li>
+              <li><a href="#svgCircle">7.1.2 SVG Circle</a></li>
+              <li><a href="#svgEllipse">7.1.3 SVG Ellipse</a></li>
+              <li><a href="#svgLine">7.1.4 SVG Line</a></li>
+              <li><a href="#svgPolyline">7.1.5 SVG Polyline</a></li>
+              <li><a href="#svgPolygon">7.1.6 SVG Polygon</a></li>
+              <li><a href="#svgPath">7.1.7 SVG Path</a></li>
+              <li><a href="#svgText">7.1.8 SVG Text</a></li>
+              <li><a href="#svgLink">7.1.9 SVG Link</a></li>
+              <li><a href="#svgStroke">7.1.10 SVG Stroke</a></li>
+              <li><a href="#svgGradients">7.1.11 SVG Gradients</a></li>
+              <li><a href="#svgFilters">7.1.12 SVG Filters</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#canvas">7.2 Canvas API</a>
+            <ul>
+              <li><a href="#canvasDrawText">7.2.1 Draw Text</a></li>
+              <li><a href="#canvasDrawLines">7.2.2 Draw Lines</a></li>
+              <li><a href="#canvasDrawCircles">7.2.3 Draw Circles</a></li>
+              <li><a href="#canvasDrawRectangles">7.2.4 Draw Rectangles</a></li>
+              <li>
+                <a href="#canvasDrawLinearGradient">7.2.5 Linear Gradient</a>
+              </li>
+              <li>
+                <a href="#canvasDrawRadialGradient">7.2.6 Radial Gradient</a>
+              </li>
+              <li><a href="#canvasDrawImages">7.2.7 Draw Images</a></li>
+            </ul>
+          </li>
+        </ol>
+      </nav>
+
+      <main class="main-content">
+        <section id="svg" class="card">
+          <span class="card-badge">Section 7.1</span>
+          <h1>SVG Graphics</h1>
+          <p>
+            SVG stands for Scalable Vector Graphics and defines graphics for the
+            web[cite: 106]. We use the
+            <code class="inline-code">&lt;svg&gt;</code> element to define an
+            SVG image[cite: 106].
+          </p>
+
+          <div id="svgRectangle" class="sub-section">
+            <h4>7.1.1 SVG Rectangle</h4>
+            <h3>Code Example</h3>
+            <div class="code-window">
+              <div class="code-header">
+                <div class="mac-dots">
+                  <div class="dot dot-red"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-green"></div>
+                </div>
+                <button class="copy-btn">Copy</button>
+              </div>
+              <pre><code>&lt;<span class="tag">svg</span> <span class="attr">width</span>=<span class="val">"100"</span> <span class="attr">height</span>=<span class="val">"100"</span>&gt;
+    &lt;<span class="tag">rect</span> <span class="attr">x</span>=<span class="val">"10"</span> <span class="attr">y</span>=<span class="val">"10"</span> <span class="attr">width</span>=<span class="val">"80"</span> <span class="attr">height</span>=<span class="val">"60"</span> <span class="attr">stroke</span>=<span class="val">"#2563eb"</span> <span class="attr">stroke-width</span>=<span class="val">"2"</span> <span class="attr">fill</span>=<span class="val">"#f5a623"</span> /&gt;
+&lt;/<span class="tag">svg</span>&gt;</code></pre>
+            </div>
+            <h3>Visual Example</h3>
+            <div class="preview-window">
+              <span class="preview-label">Browser Output Preview</span>
+              <svg width="100" height="100">
+                <rect
+                  x="10"
+                  y="10"
+                  width="80"
+                  height="60"
+                  stroke="#2563eb"
+                  stroke-width="2"
+                  fill="#f5a623"
+                />
+              </svg>
+            </div>
+          </div>
+          <div id="svgCircle" class="sub-section">
+            <h4>7.1.2 SVG Circle</h4>
+            <h3>Code Example</h3>
+            <div class="code-window">
+              <div class="code-header">
+                <div class="mac-dots">
+                  <div class="dot dot-red"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-green"></div>
+                </div>
+                <button class="copy-btn">Copy</button>
+              </div>
+              <pre><code>&lt;<span class="tag">svg</span> <span class="attr">width</span>=<span class="val">"100"</span> <span class="attr">height</span>=<span class="val">"100"</span>&gt;
+    &lt;<span class="tag">circle</span> <span class="attr">cx</span>=<span class="val">"50"</span> <span class="attr">cy</span>=<span class="val">"50"</span> <span class="attr">r</span>=<span class="val">"40"</span> <span class="attr">stroke</span>=<span class="val">"#2563eb"</span> <span class="attr">stroke-width</span>=<span class="val">"2"</span> <span class="attr">fill</span>=<span class="val">"#f5a623"</span> /&gt;
+&lt;/<span class="tag">svg</span>&gt;</code></pre>
+            </div>
+            <h3>Visual Example</h3>
+            <div class="preview-window">
+              <span class="preview-label">Browser Output Preview</span>
+              <svg width="100" height="100">
+                <circle
+                  cx="50"
+                  cy="50"
+                  r="40"
+                  stroke="#2563eb"
+                  stroke-width="2"
+                  fill="#f5a623"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <div id="svgEllipse" class="sub-section">
+            <h4>7.1.3 SVG Ellipse</h4>
+            <p>
+              We use the
+              <code class="inline-code">&lt;ellipse&gt;</code> element to draw
+              an ellipse in an SVG image[cite: 108]. Its center will be at point
+              (cx, cy), the <code class="inline-code">rx</code> attribute
+              defines its horizontal radius, and
+              <code class="inline-code">ry</code> defines its vertical
+              radius[cite: 108].
+            </p>
+            <h3>Code Example</h3>
+            <div class="code-window">
+              <div class="code-header">
+                <div class="mac-dots">
+                  <div class="dot dot-red"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-green"></div>
+                </div>
+                <button class="copy-btn">Copy</button>
+              </div>
+              <pre><code>&lt;<span class="tag">svg</span> <span class="attr">width</span>=<span class="val">"100"</span> <span class="attr">height</span>=<span class="val">"100"</span>&gt;
+    &lt;<span class="tag">ellipse</span> <span class="attr">cx</span>=<span class="val">"50"</span> <span class="attr">cy</span>=<span class="val">"50"</span> <span class="attr">rx</span>=<span class="val">"40"</span> <span class="attr">ry</span>=<span class="val">"20"</span> <span class="attr">fill</span>=<span class="val">"#f5a623"</span> <span class="attr">stroke</span>=<span class="val">"#2563eb"</span> <span class="attr">stroke-width</span>=<span class="val">"2"</span> /&gt;
+&lt;/<span class="tag">svg</span>&gt;</code></pre>
+            </div>
+            <h3>Visual Example</h3>
+            <div
+              class="preview-window"
+              style="
+                background-color: #f8fafc;
+                border: 1px solid #e2e8f0;
+                border-radius: 8px;
+              "
+            >
+              <span class="preview-label">Browser Output Preview</span>
+              <svg width="100" height="100">
+                <ellipse
+                  cx="50"
+                  cy="50"
+                  rx="40"
+                  ry="20"
+                  fill="#f5a623"
+                  stroke="#2563eb"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <div id="svgLine" class="sub-section">
+            <h4>7.1.4 SVG Line</h4>
+            <h3>Code Example</h3>
+            <div class="code-window">
+              <div class="code-header">
+                <div class="mac-dots">
+                  <div class="dot dot-red"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-green"></div>
+                </div>
+                <button class="copy-btn">Copy</button>
+              </div>
+              <pre><code>&lt;<span class="tag">svg</span> <span class="attr">width</span>=<span class="val">"100"</span> <span class="attr">height</span>=<span class="val">"100"</span>&gt;
+    &lt;<span class="tag">line</span> <span class="attr">x1</span>=<span class="val">"0"</span> <span class="attr">y1</span>=<span class="val">"0"</span> <span class="attr">x2</span>=<span class="val">"100"</span> <span class="attr">y2</span>=<span class="val">"50"</span> <span class="attr">stroke</span>=<span class="val">"#2563eb"</span> <span class="attr">stroke-width</span>=<span class="val">"2"</span> /&gt;
+&lt;/<span class="tag">svg</span>&gt;</code></pre>
+            </div>
+            <h3>Visual Example</h3>
+            <div class="preview-window">
+              <span class="preview-label">Browser Output Preview</span>
+              <svg width="100" height="100">
+                <line
+                  x1="0"
+                  y1="0"
+                  x2="100"
+                  y2="50"
+                  stroke="#2563eb"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <div id="svgPolyline" class="sub-section">
+            <h4>7.1.5 SVG Polyline</h4>
+            <p>
+              We use the
+              <code class="inline-code">&lt;polyline&gt;</code> element to draw
+              a shape that consists of many connected straight lines[cite: 109].
+              Its <code class="inline-code">points</code> attribute defines a
+              list of points (x, y coordinates)[cite: 109].
+            </p>
+            <h3>Code Example</h3>
+            <div class="code-window">
+              <div class="code-header">
+                <div class="mac-dots">
+                  <div class="dot dot-red"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-green"></div>
+                </div>
+                <button class="copy-btn">Copy</button>
+              </div>
+              <pre><code>&lt;<span class="tag">svg</span> <span class="attr">width</span>=<span class="val">"100"</span> <span class="attr">height</span>=<span class="val">"100"</span>&gt;
+    &lt;<span class="tag">polyline</span> <span class="attr">points</span>=<span class="val">"50,0 100,50 50,100 0,50"</span> <span class="attr">fill</span>=<span class="val">"none"</span> <span class="attr">stroke</span>=<span class="val">"#2563eb"</span> <span class="attr">stroke-width</span>=<span class="val">"2"</span> /&gt;
+&lt;/<span class="tag">svg</span>&gt;</code></pre>
+            </div>
+            <h3>Visual Example</h3>
+            <div
+              class="preview-window"
+              style="
+                background-color: #f8fafc;
+                border: 1px solid #e2e8f0;
+                border-radius: 8px;
+              "
+            >
+              <span class="preview-label">Browser Output Preview</span>
+              <svg width="100" height="100">
+                <polyline
+                  points="50,0 100,50 50,100 0,50"
+                  fill="none"
+                  stroke="#2563eb"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <div id="svgPolygon" class="sub-section">
+            <h4>7.1.6 SVG Polygon</h4>
+            <p>
+              The <code class="inline-code">&lt;polygon&gt;</code> element works
+              like an auto "closed" polyline[cite: 110]. It means that a line
+              will automatically connect the final point to the first
+              point[cite: 110].
+            </p>
+            <h3>Code Example</h3>
+            <div class="code-window">
+              <div class="code-header">
+                <div class="mac-dots">
+                  <div class="dot dot-red"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-green"></div>
+                </div>
+                <button class="copy-btn">Copy</button>
+              </div>
+              <pre><code>&lt;<span class="tag">svg</span> <span class="attr">width</span>=<span class="val">"100"</span> <span class="attr">height</span>=<span class="val">"100"</span>&gt;
+    &lt;<span class="tag">polygon</span> <span class="attr">points</span>=<span class="val">"50,0 100,50 50,100 0,50"</span> <span class="attr">fill</span>=<span class="val">"#eef3ff"</span> <span class="attr">stroke</span>=<span class="val">"#2a5bd7"</span> <span class="attr">stroke-width</span>=<span class="val">"2"</span> /&gt;
+&lt;/<span class="tag">svg</span>&gt;</code></pre>
+            </div>
+            <h3>Visual Example</h3>
+            <div
+              class="preview-window"
+              style="
+                background-color: #f8fafc;
+                border: 1px solid #e2e8f0;
+                border-radius: 8px;
+              "
+            >
+              <span class="preview-label">Browser Output Preview</span>
+              <svg width="100" height="100">
+                <polygon
+                  points="50,0 100,50 50,100 0,50"
+                  fill="#eef3ff"
+                  stroke="#2a5bd7"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <div id="svgPath" class="sub-section">
+            <h4>7.1.7 SVG Path</h4>
+            <p>
+              The <code class="inline-code">&lt;path&gt;</code> element defines
+              a path of lines and curves using the
+              <code class="inline-code">d</code> attribute[cite: 110]. M moves
+              the pen, L draws a line, and Z closes the path[cite: 110].
+            </p>
+            <h3>Code Example</h3>
+            <div class="code-window">
+              <div class="code-header">
+                <div class="mac-dots">
+                  <div class="dot dot-red"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-green"></div>
+                </div>
+                <button class="copy-btn">Copy</button>
+              </div>
+              <pre><code>&lt;<span class="tag">svg</span> <span class="attr">height</span>=<span class="val">"100"</span> <span class="attr">width</span>=<span class="val">"100"</span>&gt;
+    &lt;<span class="tag">path</span> <span class="attr">d</span>=<span class="val">"M50 0 L25 80 l50 0 Z"</span> <span class="attr">fill</span>=<span class="val">"none"</span> <span class="attr">stroke</span>=<span class="val">"#16306b"</span> <span class="attr">stroke-width</span>=<span class="val">"2"</span> /&gt;
+&lt;/<span class="tag">svg</span>&gt;</code></pre>
+            </div>
+            <h3>Visual Example</h3>
+            <div
+              class="preview-window"
+              style="
+                background-color: #f8fafc;
+                border: 1px solid #e2e8f0;
+                border-radius: 8px;
+              "
+            >
+              <span class="preview-label">Browser Output Preview</span>
+              <svg height="100" width="100">
+                <path
+                  d="M50 0 L25 80 l50 0 Z"
+                  fill="none"
+                  stroke="#16306b"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <div id="svgText" class="sub-section">
+            <h4>7.1.8 SVG Text</h4>
+            <h3>Code Example</h3>
+            <div class="code-window">
+              <div class="code-header">
+                <div class="mac-dots">
+                  <div class="dot dot-red"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-green"></div>
+                </div>
+                <button class="copy-btn">Copy</button>
+              </div>
+              <pre><code>&lt;<span class="tag">svg</span> <span class="attr">height</span>=<span class="val">"100"</span> <span class="attr">width</span>=<span class="val">"200"</span>&gt;
+    &lt;<span class="tag">text</span> <span class="attr">x</span>=<span class="val">"0"</span> <span class="attr">y</span>=<span class="val">"20"</span> <span class="attr">fill</span>=<span class="val">"#16306b"</span>&gt;This is a line of text.&lt;/<span class="tag">text</span>&gt;
+&lt;/<span class="tag">svg</span>&gt;</code></pre>
+            </div>
+            <h3>Visual Example</h3>
+            <div class="preview-window">
+              <span class="preview-label">Browser Output Preview</span>
+              <svg height="50" width="200">
+                <text x="0" y="20" fill="#16306b">This is a line of text.</text>
+              </svg>
+            </div>
+          </div>
+
+          <div id="svgLink" class="sub-section">
+            <h4>7.1.9 SVG Link</h4>
+            <p>
+              We use an <code class="inline-code">&lt;a&gt;</code> element to
+              “draw” a hyperlink in an SVG image[cite: 113].
+            </p>
+            <h3>Code Example</h3>
+            <div class="code-window">
+              <div class="code-header">
+                <div class="mac-dots">
+                  <div class="dot dot-red"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-green"></div>
+                </div>
+                <button class="copy-btn">Copy</button>
+              </div>
+              <pre><code>&lt;<span class="tag">svg</span> <span class="attr">height</span>=<span class="val">"50"</span> <span class="attr">width</span>=<span class="val">"200"</span> <span class="attr">xmlns:xlink</span>=<span class="val">"http://www.w3.org/1999/xlink"</span>&gt;
+    &lt;<span class="tag">a</span> <span class="attr">xlink:href</span>=<span class="val">"#"</span> <span class="attr">target</span>=<span class="val">"_blank"</span>&gt;
+        &lt;<span class="tag">text</span> <span class="attr">x</span>=<span class="val">"0"</span> <span class="attr">y</span>=<span class="val">"20"</span> <span class="attr">fill</span>=<span class="val">"#2563eb"</span>&gt;This is a link&lt;/<span class="tag">text</span>&gt;
+    &lt;/<span class="tag">a</span>&gt;
+&lt;/<span class="tag">svg</span>&gt;</code></pre>
+            </div>
+            <h3>Visual Example</h3>
+            <div
+              class="preview-window"
+              style="
+                background-color: #f8fafc;
+                border: 1px solid #e2e8f0;
+                border-radius: 8px;
+              "
+            >
+              <span class="preview-label">Browser Output Preview</span>
+              <svg
+                height="50"
+                width="200"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <a xlink:href="http://www.w3.org/1999/xlink" target="_blank">
+                  <text
+                    x="0"
+                    y="20"
+                    fill="#2563eb"
+                    style="text-decoration: underline"
+                  >
+                    This is a link
+                  </text>
+                </a>
+              </svg>
+            </div>
+          </div>
+
+          <div id="svgStroke" class="sub-section">
+            <h4>7.1.10 SVG Stroke</h4>
+            <p>
+              The below stroke properties can be applied to text, lines, and
+              outlines of shapes (rectangles, circles, etc.)[cite: 114]. We use
+              <code class="inline-code">stroke-dasharray</code> attribute to
+              create dashed lines[cite: 115].
+            </p>
+            <h3>Code Example</h3>
+            <div class="code-window">
+              <div class="code-header">
+                <div class="mac-dots">
+                  <div class="dot dot-red"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-green"></div>
+                </div>
+                <button class="copy-btn">Copy</button>
+              </div>
+              <pre><code>&lt;<span class="tag">svg</span> <span class="attr">width</span>=<span class="val">"300"</span> <span class="attr">height</span>=<span class="val">"40"</span>&gt;
+    &lt;<span class="tag">line</span> <span class="attr">x1</span>=<span class="val">"0"</span> <span class="attr">y1</span>=<span class="val">"20"</span> <span class="attr">x2</span>=<span class="val">"300"</span> <span class="attr">y2</span>=<span class="val">"20"</span> <span class="attr">stroke</span>=<span class="val">"#f5a623"</span> <span class="attr">stroke-width</span>=<span class="val">"4"</span> <span class="attr">stroke-dasharray</span>=<span class="val">"10,5,20"</span> /&gt;
+&lt;/<span class="tag">svg</span>&gt;</code></pre>
+            </div>
+            <h3>Visual Example</h3>
+            <div
+              class="preview-window"
+              style="
+                background-color: #f8fafc;
+                border: 1px solid #e2e8f0;
+                border-radius: 8px;
+              "
+            >
+              <span class="preview-label">Browser Output Preview</span>
+              <svg width="300" height="40">
+                <line
+                  x1="0"
+                  y1="20"
+                  x2="300"
+                  y2="20"
+                  stroke="#f5a623"
+                  stroke-width="4"
+                  stroke-dasharray="10,5,20"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <div id="svgGradients" class="sub-section">
+            <h4>7.1.11 SVG Gradients</h4>
+            <h3>Code Example</h3>
+            <div class="code-window">
+              <div class="code-header">
+                <div class="mac-dots">
+                  <div class="dot dot-red"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-green"></div>
+                </div>
+                <button class="copy-btn">Copy</button>
+              </div>
+              <pre><code>&lt;<span class="tag">svg</span> <span class="attr">height</span>=<span class="val">"100"</span> <span class="attr">width</span>=<span class="val">"200"</span>&gt;
+    &lt;<span class="tag">defs</span>&gt;
+        &lt;<span class="tag">linearGradient</span> <span class="attr">id</span>=<span class="val">"grad1"</span> <span class="attr">x1</span>=<span class="val">"0%"</span> <span class="attr">y1</span>=<span class="val">"0%"</span> <span class="attr">x2</span>=<span class="val">"100%"</span> <span class="attr">y2</span>=<span class="val">"0%"</span>&gt;
+            &lt;<span class="tag">stop</span> <span class="attr">offset</span>=<span class="val">"0%"</span> <span class="attr">stop-color</span>=<span class="val">"#f5a623"</span> /&gt;
+            &lt;<span class="tag">stop</span> <span class="attr">offset</span>=<span class="val">"100%"</span> <span class="attr">stop-color</span>=<span class="val">"#2563eb"</span> /&gt;
+        &lt;/<span class="tag">linearGradient</span>&gt;
+    &lt;/<span class="tag">defs</span>&gt;
+    &lt;<span class="tag">rect</span> <span class="attr">x</span>=<span class="val">"0"</span> <span class="attr">y</span>=<span class="val">"0"</span> <span class="attr">width</span>=<span class="val">"200"</span> <span class="attr">height</span>=<span class="val">"100"</span> <span class="attr">fill</span>=<span class="val">"url(#grad1)"</span> /&gt;
+&lt;/<span class="tag">svg</span>&gt;</code></pre>
+            </div>
+            <h3>Visual Example</h3>
+            <div class="preview-window">
+              <span class="preview-label">Browser Output Preview</span>
+              <svg height="100" width="200">
+                <defs>
+                  <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#f5a623" />
+                    <stop offset="100%" stop-color="#2563eb" />
+                  </linearGradient>
+                </defs>
+                <rect x="0" y="0" width="200" height="100" fill="url(#grad1)" />
+              </svg>
+            </div>
+          </div>
+
+          <div id="svgFilters" class="sub-section">
+            <h4>7.1.12 SVG Filters</h4>
+            <p>
+              The <code class="inline-code">&lt;filter&gt;</code> element
+              defines an SVG filter like the Gaussian Blur
+              <code class="inline-code">&lt;feGaussianBlur&gt;</code>[cite:
+              119].
+            </p>
+            <h3>Code Example</h3>
+            <div class="code-window">
+              <div class="code-header">
+                <div class="mac-dots">
+                  <div class="dot dot-red"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-green"></div>
+                </div>
+                <button class="copy-btn">Copy</button>
+              </div>
+              <pre><code>&lt;<span class="tag">svg</span> <span class="attr">height</span>=<span class="val">"100"</span> <span class="attr">width</span>=<span class="val">"200"</span>&gt;
+    &lt;<span class="tag">defs</span>&gt;
+        &lt;<span class="tag">filter</span> <span class="attr">id</span>=<span class="val">"my-filter"</span>&gt;
+            &lt;<span class="tag">feGaussianBlur</span> <span class="attr">in</span>=<span class="val">"SourceGraphic"</span> <span class="attr">stdDeviation</span>=<span class="val">"5"</span> /&gt;
+        &lt;/<span class="tag">filter</span>&gt;
+    &lt;/<span class="tag">defs</span>&gt;
+    &lt;<span class="tag">rect</span> <span class="attr">x</span>=<span class="val">"20"</span> <span class="attr">y</span>=<span class="val">"20"</span> <span class="attr">width</span>=<span class="val">"160"</span> <span class="attr">height</span>=<span class="val">"60"</span> <span class="attr">fill</span>=<span class="val">"#2563eb"</span> <span class="attr">filter</span>=<span class="val">"url(#my-filter)"</span> /&gt;
+&lt;/<span class="tag">svg</span>&gt;</code></pre>
+            </div>
+            <h3>Visual Example</h3>
+            <div
+              class="preview-window"
+              style="
+                background-color: #f8fafc;
+                border: 1px solid #e2e8f0;
+                border-radius: 8px;
+              "
+            >
+              <span class="preview-label">Browser Output Preview</span>
+              <svg height="100" width="200">
+                <defs>
+                  <filter id="my-filter2">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="5" />
+                  </filter>
+                </defs>
+                <rect
+                  x="20"
+                  y="20"
+                  width="160"
+                  height="60"
+                  fill="#2563eb"
+                  filter="url(#my-filter2)"
+                />
+              </svg>
+            </div>
+          </div>
+        </section>
+
+        <section id="canvas" class="card">
+          <span class="card-badge">Section 7.2</span>
+          <h1>Canvas</h1>
+          <p>
+            The <code class="inline-code">&lt;canvas&gt;</code> element is used
+            to draw graphics on a webpage via JavaScript[cite: 120]. By default,
+            the canvas has no border and a transparent background so that we can
+            place it in front of another element[cite: 120].
+          </p>
+
+          <div id="canvasDrawText" class="sub-section">
+            <h4>7.2.1 Draw Text</h4>
+            <p>
+              We use the drawing object to draw text on our canvas using the
+              <code class="inline-code">fillText()</code> method[cite: 120]. We
+              can also set a font for the text using the
+              <code class="inline-code">font</code> property[cite: 120].
+            </p>
+            <h3>Code Example</h3>
+            <div class="code-window">
+              <div class="code-header">
+                <div class="mac-dots">
+                  <div class="dot dot-red"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-green"></div>
+                </div>
+                <button class="copy-btn">Copy</button>
+              </div>
+              <pre><code>&lt;<span class="tag">canvas</span> <span class="attr">id</span>=<span class="val">"my-canvas"</span> <span class="attr">width</span>=<span class="val">"200"</span> <span class="attr">height</span>=<span class="val">"100"</span> <span class="attr">style</span>=<span class="val">"border: 1px solid #e2e8f0; background-color: #f8fafc; border-radius: 8px;"</span>&gt;&lt;/<span class="tag">canvas</span>&gt;
+&lt;<span class="tag">script</span>&gt;
+  var c = document.getElementById("my-canvas");
+  var ctx = c.getContext("2d");
+  ctx.fillStyle = "#1c2540";
+  ctx.font = "20px Arial";
+  ctx.fillText("Neo D. Truman", 10, 50);
+&lt;/<span class="tag">script</span>&gt;</code></pre>
+            </div>
+            <h3>Visual Example</h3>
+            <div class="preview-window">
+              <span class="preview-label">Browser Output Preview</span>
+              <canvas
+                id="preview-canvas-text"
+                width="200"
+                height="100"
+                style="
+                  border: 1px solid #e2e8f0;
+                  background-color: #f8fafc;
+                  border-radius: 8px;
+                "
+              ></canvas>
+              <script>
+                (function () {
+                  var c = document.getElementById("preview-canvas-text");
+                  if (c) {
+                    var ctx = c.getContext("2d");
+                    ctx.fillStyle = "#1c2540";
+                    ctx.font = "20px Arial";
+                    ctx.fillText(".NET PathShala", 10, 50);
+                  }
+                })();
+              </script>
+            </div>
+          </div>
+          <div id="canvasDrawLines" class="sub-section">
+            <h4>7.2.2 Draw Lines</h4>
+            <p>
+              We get the drawing object from our canvas to draw a line using
+              three methods: <code class="inline-code">moveTo(x, y)</code>,
+              <code class="inline-code">lineTo(x, y)</code>, and
+              <code class="inline-code">stroke()</code>[cite: 121].
+            </p>
+            <h3>Code Example</h3>
+            <div class="code-window">
+              <div class="code-header">
+                <div class="mac-dots">
+                  <div class="dot dot-red"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-green"></div>
+                </div>
+                <button class="copy-btn">Copy</button>
+              </div>
+              <pre><code>&lt;<span class="tag">script</span>&gt;
+  var c = document.getElementById("my-canvas");
+  var ctx = c.getContext("2d");
+  ctx.strokeStyle = "#2563eb";
+  ctx.lineWidth = 3;
+  ctx.moveTo(0, 0);
+  ctx.lineTo(200, 100);
+  ctx.stroke();
+&lt;/<span class="tag">script</span>&gt;</code></pre>
+            </div>
+            <h3>Visual Example</h3>
+            <div class="preview-window">
+              <span class="preview-label">Browser Output Preview</span>
+              <canvas
+                id="preview-canvas-lines"
+                width="200"
+                height="100"
+                style="
+                  border: 1px solid #e2e8f0;
+                  background-color: #f8fafc;
+                  border-radius: 8px;
+                "
+              ></canvas>
+              <script>
+                (function () {
+                  var c = document.getElementById("preview-canvas-lines");
+                  if (c) {
+                    var ctx = c.getContext("2d");
+                    ctx.strokeStyle = "#2563eb";
+                    ctx.lineWidth = 3;
+                    ctx.moveTo(0, 0);
+                    ctx.lineTo(200, 100);
+                    ctx.stroke();
+                  }
+                })();
+              </script>
+            </div>
+          </div>
+          <div id="canvasDrawCircles" class="sub-section">
+            <h4>7.2.3 Draw Circles</h4>
+            <p>
+              To draw a circle, we use the
+              <code class="inline-code">arc(x,y,r,startangle,endangle)</code>
+              method and invoke the drawing with
+              <code class="inline-code">stroke()</code>. The end angle is set to
+              2*PI.
+            </p>
+            <h3>Code Example</h3>
+            <div class="code-window">
+              <div class="code-header">
+                <div class="mac-dots">
+                  <div class="dot dot-red"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-green"></div>
+                </div>
+                <button class="copy-btn">Copy</button>
+              </div>
+              <pre><code>&lt;<span class="tag">script</span>&gt;
+  var c = document.getElementById("my-canvas");
+  var ctx = c.getContext("2d");
+  ctx.strokeStyle = "#f5a623";
+  ctx.lineWidth = 3;
+  ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+  ctx.stroke();
+&lt;/<span class="tag">script</span>&gt;</code></pre>
+            </div>
+            <h3>Visual Example</h3>
+            <div class="preview-window">
+              <span class="preview-label">Browser Output Preview</span>
+              <canvas
+                id="preview-canvas-circles"
+                width="200"
+                height="100"
+                style="
+                  border: 1px solid #e2e8f0;
+                  background-color: #f8fafc;
+                  border-radius: 8px;
+                "
+              ></canvas>
+              <script>
+                (function () {
+                  var c = document.getElementById("preview-canvas-circles");
+                  if (c) {
+                    var ctx = c.getContext("2d");
+                    ctx.strokeStyle = "#f5a623";
+                    ctx.lineWidth = 3;
+                    ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+                    ctx.stroke();
+                  }
+                })();
+              </script>
+            </div>
+          </div>
+          <div id="canvasDrawRectangles" class="sub-section">
+            <h4>7.2.4 Draw Rectangles</h4>
+            <p>
+              We draw a rectangle using the
+              <code class="inline-code">rect(x,y,width,height)</code> method and
+              invoke the drawing with
+              <code class="inline-code">stroke()</code>[cite: 124].
+            </p>
+            <h3>Code Example</h3>
+            <div class="code-window">
+              <div class="code-header">
+                <div class="mac-dots">
+                  <div class="dot dot-red"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-green"></div>
+                </div>
+                <button class="copy-btn">Copy</button>
+              </div>
+              <pre><code>&lt;<span class="tag">script</span>&gt;
+  var c = document.getElementById("my-canvas");
+  var ctx = c.getContext("2d");
+  ctx.strokeStyle = "#16306b";
+  ctx.lineWidth = 3;
+  ctx.rect(20, 20, 160, 60);
+  ctx.stroke();
+&lt;/<span class="tag">script</span>&gt;</code></pre>
+            </div>
+            <h3>Visual Example</h3>
+            <div class="preview-window">
+              <span class="preview-label">Browser Output Preview</span>
+              <canvas
+                id="preview-canvas-rect"
+                width="200"
+                height="100"
+                style="
+                  border: 1px solid #e2e8f0;
+                  background-color: #f8fafc;
+                  border-radius: 8px;
+                "
+              ></canvas>
+              <script>
+                (function () {
+                  var c = document.getElementById("preview-canvas-rect");
+                  if (c) {
+                    var ctx = c.getContext("2d");
+                    ctx.strokeStyle = "#16306b";
+                    ctx.lineWidth = 3;
+                    ctx.rect(20, 20, 160, 60);
+                    ctx.stroke();
+                  }
+                })();
+              </script>
+            </div>
+          </div>
+
+          <div id="canvasDrawLinearGradient" class="sub-section">
+            <h4>7.2.5 Linear Gradient</h4>
+            <p>
+              We use the
+              <code class="inline-code">createLinearGradient(x1,y1,x2,y2)</code>
+              method to create a linear gradient[cite: 124]. The
+              <code class="inline-code">addColorStop()</code> method specifies a
+              color stop, and <code class="inline-code">fillStyle</code> applies
+              it to the shape[cite: 125].
+            </p>
+            <h3>Code Example</h3>
+            <div class="code-window">
+              <div class="code-header">
+                <div class="mac-dots">
+                  <div class="dot dot-red"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-green"></div>
+                </div>
+                <button class="copy-btn">Copy</button>
+              </div>
+              <pre><code>&lt;<span class="tag">script</span>&gt;
+  var c = document.getElementById("my-canvas");
+  var ctx = c.getContext("2d");
+  var grd = ctx.createLinearGradient(0, 0, 200, 0);
+  grd.addColorStop(0, "#2a5bd7");
+  grd.addColorStop(1, "#f5a623");
+  ctx.fillStyle = grd;
+  ctx.fillRect(20, 20, 160, 60);
+&lt;/<span class="tag">script</span>&gt;</code></pre>
+            </div>
+            <h3>Visual Example</h3>
+            <div class="preview-window">
+              <span class="preview-label">Browser Output Preview</span>
+              <canvas
+                id="preview-canvas-linear"
+                width="200"
+                height="100"
+                style="
+                  border: 1px solid #e2e8f0;
+                  background-color: #f8fafc;
+                  border-radius: 8px;
+                "
+              ></canvas>
+              <script>
+                (function () {
+                  var c = document.getElementById("preview-canvas-linear");
+                  if (c) {
+                    var ctx = c.getContext("2d");
+                    var grd = ctx.createLinearGradient(0, 0, 200, 0);
+                    grd.addColorStop(0, "#2a5bd7");
+                    grd.addColorStop(1, "#f5a623");
+                    ctx.fillStyle = grd;
+                    ctx.fillRect(20, 20, 160, 60);
+                  }
+                })();
+              </script>
+            </div>
+          </div>
+
+          <div id="canvasDrawRadialGradient" class="sub-section">
+            <h4>7.2.6 Radial Gradient</h4>
+            <p>
+              We use the
+              <code class="inline-code"
+                >createRadialGradient(x1,y1,r1,x2,y2,r2)</code
+              >
+              method to create a radial gradient[cite: 126].
+            </p>
+            <h3>Code Example</h3>
+            <div class="code-window">
+              <div class="code-header">
+                <div class="mac-dots">
+                  <div class="dot dot-red"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-green"></div>
+                </div>
+                <button class="copy-btn">Copy</button>
+              </div>
+              <pre><code>&lt;<span class="tag">script</span>&gt;
+  var c = document.getElementById("my-canvas");
+  var ctx = c.getContext("2d");
+  var grd = ctx.createRadialGradient(60, 60, 10, 95, 50, 70);
+  grd.addColorStop(0, "#f5a623");
+  grd.addColorStop(1, "#16306b");
+  ctx.fillStyle = grd;
+  ctx.fillRect(0, 0, 200, 100);
+&lt;/<span class="tag">script</span>&gt;</code></pre>
+            </div>
+            <h3>Visual Example</h3>
+            <div class="preview-window">
+              <span class="preview-label">Browser Output Preview</span>
+              <canvas
+                id="preview-canvas-radial"
+                width="200"
+                height="100"
+                style="
+                  border: 1px solid #e2e8f0;
+                  background-color: #f8fafc;
+                  border-radius: 8px;
+                "
+              ></canvas>
+              <script>
+                (function () {
+                  var c = document.getElementById("preview-canvas-radial");
+                  if (c) {
+                    var ctx = c.getContext("2d");
+                    var grd = ctx.createRadialGradient(60, 60, 10, 95, 50, 70);
+                    grd.addColorStop(0, "#f5a623");
+                    grd.addColorStop(1, "#16306b");
+                    ctx.fillStyle = grd;
+                    ctx.fillRect(0, 0, 200, 100);
+                  }
+                })();
+              </script>
+            </div>
+          </div>
+
+          <div id="canvasDrawImages" class="sub-section">
+            <h4>7.2.7 Draw Images</h4>
+            <p>
+              We use the
+              <code class="inline-code">drawImage(image,x,y,width,height)</code>
+              method to draw an image on canvas at the point (x,y)[cite: 127].
+              If width and height parameters are not specified, the intrinsic
+              size of the image will be used[cite: 127].
+            </p>
+            <h3>Code Example</h3>
+            <div class="code-window">
+              <div class="code-header">
+                <div class="mac-dots">
+                  <div class="dot dot-red"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-green"></div>
+                </div>
+                <button class="copy-btn">Copy</button>
+              </div>
+              <pre><code>&lt;<span class="tag">script</span>&gt;
+  var c = document.getElementById("my-canvas");
+  var ctx = c.getContext("2d");
+  const image = new Image();
+  image.onload = drawMyImage;
+  image.src = "image/my_picture.png";
+  
+  function drawMyImage() {
+    ctx.drawImage(this, 50, 0);
+    ctx.drawImage(this, 0, 0, 80, 80);
+  }
+&lt;/<span class="tag">script</span>&gt;</code></pre>
+            </div>
+            <h3>Visual Example</h3>
+            <div class="preview-window">
+              <span class="preview-label">Browser Output Preview</span>
+              <canvas
+                id="preview-canvas-image"
+                width="200"
+                height="100"
+                style="
+                  border: 1px solid #e2e8f0;
+                  background-color: #f8fafc;
+                  border-radius: 8px;
+                "
+              ></canvas>
+              <script>
+                (function () {
+                  var c = document.getElementById("preview-canvas-image");
+                  if (c) {
+                    var ctx = c.getContext("2d");
+                    const image = new Image();
+                    image.onload = function () {
+                      ctx.drawImage(this, 50, 0, 100, 100);
+                      ctx.drawImage(this, 0, 0, 40, 40);
+                    };
+                    image.src = "image/my_picture.png";
+                  }
+                })();
+              </script>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer>
+      <div class="container foot-grid">
+        <div>
+          <a href="index.html" class="logo light"
+            >&lt;/&gt; .NET <span>Pathshala</span></a
+          >
+          <p>Building the next generation of full-stack software engineers.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#about">About Course</a></li>
+            <li><a href="#programs">Tech Stack</a></li>
+            <li><a href="#admission">Enroll</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>Dhaka, Bangladesh</li>
+            <li>+880 1234 567890</li>
+            <li>admission@dotnetpathshala.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copy">
+        &copy; <span id="year">2020</span> .NET Pathshala. All rights reserved.
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

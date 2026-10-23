@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 08: Advanced HTML | .NET Pathshala</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="navbar" id="navbar">
+      <div class="container nav-inner">
+        <div class="logo">
+          <a href="index.html">&lt;/&gt; .NET <span>Pathshala</span></a>
+        </div>
+        <nav>
+          <ul class="menu" id="menu">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#programs">Tech Stack</a></li>
+
+            <li class="dropdown">
+              <a href="#chapters" style="cursor: pointer">HTML & CSS ▾</a>
+              <div class="dropdown-content">
+                <a href="chapter_01.html">01. Getting to Know HTML</a>
+                <a href="chapter_02.html">02. Basic HTML Elements</a>
+                <a href="chapter_03.html">03. HTML Styles & Formatting</a>
+                <a href="chapter_04.html">04. Semantic HTML</a>
+                <a href="chapter_05.html">05. Web Forms</a>
+                <a href="chapter_06.html">06. HTML Multimedia</a>
+                <a href="chapter_07.html">07. HTML Graphics (SVG & Canvas)</a>
+                <a href="chapter_08.html">08. Advanced HTML</a>
+                <a href="chapter_09.html">09. HTML Events</a>
+                <a href="chapter_10.html">10. HTML APIs</a>
+                <a href="chapter_11.html">11. Getting to Know CSS</a>
+                <a href="chapter_12.html">12. CSS Selectors</a>
+                <a href="chapter_13.html">13. CSS Cascading</a>
+                <a href="chapter_14.html">14. CSS Box Model</a>
+                <a href="chapter_15.html">15. CSS Colors</a>
+                <a href="chapter_16.html">16. CSS Text & Fonts</a>
+                <a href="chapter_17.html">17. CSS Backgrounds</a>
+                <a href="chapter_18.html">18. CSS Display & Effects</a>
+                <a href="chapter_19.html">19. CSS Layout (Flexbox & Grid)</a>
+                <a href="chapter_20.html">20. CSS Transitions & Animations</a>
+                <a href="chapter_21.html">21. Advanced CSS</a>
+                <a href="chapter_22.html">22. Responsive CSS</a>
+              </div>
+            </li>
+
+            <li>
+              <a href="#admission" class="btn small">Enroll Now</a>
+            </li>
+          </ul>
+        </nav>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+    <div class="header-container">
+      <header class="page-header">
+        <span class="chapter-badge">Chapter 08</span>
+        <h1>Advanced HTML</h1>
+        <h2>
+          "Take your web development skills to the next level by exploring
+          advanced HTML elements, custom attributes, and modern techniques"
+        </h2>
+      </header>
+    </div>
+
+    <div class="layout-container">
+      <nav class="sidebar">
+        <h3>Table of Contents</h3>
+        <ol>
+          <li>
+            <a href="#dataURIs">8.1 Data URIs</a>
+          </li>
+          <li>
+            <a href="#blockElements">8.2 Block Elements</a>
+          </li>
+          <li>
+            <a href="#inlineElements">8.3 Inline Elements</a>
+          </li>
+          <li>
+            <a href="#inlineBlockElements">8.4 Inline-Block Elements</a>
+          </li>
+        </ol>
+      </nav>
+
+      <main class="main-content">
+        <section id="dataURIs" class="card">
+          <span class="card-badge">Section 8.1</span>
+          <h1>Data URIs</h1>
+          <p>
+            Data URI (Uniform Resource Identifier) supports including inline
+            data in web pages as if they were external resources. The syntax is
+            <code class="inline-code"
+              >data:[&lt;media type&gt;][;base64],&lt;data&gt;</code
+            >.
+          </p>
+
+          <h3>Code Example</h3>
+          <div class="code-window">
+            <div class="code-header">
+              <div class="mac-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+              </div>
+              <button class="copy-btn">Copy</button>
+            </div>
+            <pre><code>&lt;<span class="tag">textarea</span> <span class="attr">name</span>=<span class="val">"input"</span> <span class="attr">cols</span>=<span class="val">"30"</span>&gt;Change this text and click the download link&lt;/<span class="tag">textarea</span>&gt;
+&lt;<span class="tag">a</span> <span class="attr">href</span>=<span class="val">"javascript:void(0)"</span> <span class="attr">download</span>=<span class="val">"data.txt"</span>&gt; Download Text &lt;/<span class="tag">a</span>&gt;
+&lt;<span class="tag">script</span> <span class="attr">type</span>=<span class="val">"text/javascript"</span>&gt;
+  var input = document.querySelector("textarea[name='input']");
+  var download = document.querySelector("a[download]");
+  input.addEventListener("input", updateDownloadHref, false);
+  updateDownloadHref();
+  function updateDownloadHref() {
+    var text = input.value;
+    download.setAttribute("href", "data:text/plain;charset=utf-8," + encodeURIComponent(text));
+  }
+&lt;/<span class="tag">script</span>&gt;</code></pre>
+          </div>
+
+          <h3>Visual Example</h3>
+          <div class="preview-window">
+            <span class="preview-label">Browser Output Preview</span>
+            <textarea
+              id="previewTextarea"
+              cols="30"
+              style="
+                vertical-align: middle;
+                background-color: #f8fafc;
+                color: #0f172a;
+                border: 1px solid #e2e8f0;
+                border-radius: 8px;
+                padding: 8px;
+              "
+              placeholder="Change this text..."
+            ></textarea>
+            <a
+              id="previewDownload"
+              href="javascript:void(0)"
+              download="data.txt"
+              style="
+                vertical-align: middle;
+                margin-left: 10px;
+                color: #2563eb;
+                text-decoration: underline;
+              "
+              >Download Text</a
+            >
+            <script>
+              (function () {
+                var previewInput = document.getElementById("previewTextarea");
+                var previewDownload =
+                  document.getElementById("previewDownload");
+
+                function updatePreviewDownloadHref() {
+                  var text = previewInput.value;
+                  previewDownload.setAttribute(
+                    "href",
+                    "data:text/plain;charset=utf-8," + encodeURIComponent(text),
+                  );
+                }
+
+                if (previewInput && previewDownload) {
+                  previewInput.addEventListener(
+                    "input",
+                    updatePreviewDownloadHref,
+                    false,
+                  );
+                  updatePreviewDownloadHref();
+                }
+              })();
+            </script>
+          </div>
+        </section>
+
+        <section id="blockElements" class="card">
+          <span class="card-badge">Section 8.2</span>
+          <h1>Block Elements</h1>
+          <p>
+            Block elements occupy 100% of the parent element's width, regardless
+            of content. Therefore, they are stacked vertically by default. We
+            can change other types of elements to block elements using the CSS
+            declaration
+            <code class="inline-code">display: block;</code>.
+          </p>
+
+          <h3>Code Example</h3>
+          <div class="code-window">
+            <div class="code-header">
+              <div class="mac-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+              </div>
+              <button class="copy-btn">Copy</button>
+            </div>
+            <pre><code><span class="tag">span</span> {
+    <span class="attr">display</span>: <span class="val">block</span>;
+}</code></pre>
+          </div>
+
+          <h3>Visual Example</h3>
+          <div class="preview-window">
+            <span class="preview-label">Browser Output Preview</span>
+            <div
+              style="
+                background-color: #eef3ff;
+                color: #1c2540;
+                border: 1px solid #e6eaf4;
+                border-radius: 8px;
+                padding: 10px;
+                margin-bottom: 8px;
+                display: block;
+              "
+            >
+              Block Element 1
+            </div>
+            <div
+              style="
+                background-color: #eef3ff;
+                color: #1c2540;
+                border: 1px solid #e6eaf4;
+                border-radius: 8px;
+                padding: 10px;
+                display: block;
+              "
+            >
+              Block Element 2
+            </div>
+          </div>
+        </section>
+
+        <section id="inlineElements" class="card">
+          <span class="card-badge">Section 8.3</span>
+          <h1>Inline Elements</h1>
+          <p>
+            Inline elements only occupy the space necessary for their contents
+            so that they will not cause any line breaks. Therefore, they could
+            not use these CSS properties: width, height, padding-top,
+            padding-bottom, margin-top, margin-bottom. We can change other types
+            of elements to inline elements using the CSS declaration
+            <code class="inline-code">display: inline;</code>.
+          </p>
+
+          <h3>Code Example</h3>
+          <div class="code-window">
+            <div class="code-header">
+              <div class="mac-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+              </div>
+              <button class="copy-btn">Copy</button>
+            </div>
+            <pre><code><span class="tag">div</span> {
+    <span class="attr">display</span>: <span class="val">inline</span>;
+}</code></pre>
+          </div>
+
+          <h3>Visual Example</h3>
+          <div class="preview-window">
+            <span class="preview-label">Browser Output Preview</span>
+            <div
+              style="
+                background-color: #eff6ff;
+                color: #2563eb;
+                padding: 6px 12px;
+                border: 1px solid #2563eb;
+                border-radius: 8px;
+                display: inline;
+                margin-right: 8px;
+              "
+            >
+              Inline Element 1
+            </div>
+            <div
+              style="
+                background-color: #eff6ff;
+                color: #2563eb;
+                padding: 6px 12px;
+                border: 1px solid #2563eb;
+                border-radius: 8px;
+                display: inline;
+              "
+            >
+              Inline Element 2
+            </div>
+          </div>
+        </section>
+
+        <section id="inlineBlockElements" class="card">
+          <span class="card-badge">Section 8.4</span>
+          <h1>Inline-Block Elements</h1>
+          <p>
+            The inline-block elements have both characteristics of inline and
+            block elements. They only occupy the space necessary for their
+            contents but could have width, height, padding, and margin. We can
+            change other types of elements to inline-block elements using the
+            CSS declaration
+            <code class="inline-code">display: inline-block;</code>.
+          </p>
+
+          <h3>Code Example</h3>
+          <div class="code-window">
+            <div class="code-header">
+              <div class="mac-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+              </div>
+              <button class="copy-btn">Copy</button>
+            </div>
+            <pre><code><span class="tag">span</span> {
+    <span class="attr">display</span>: <span class="val">inline-block</span>;
+    <span class="attr">width</span>: <span class="val">120px</span>;
+    <span class="attr">height</span>: <span class="val">40px</span>;
+}</code></pre>
+          </div>
+
+          <h3>Visual Example</h3>
+          <div class="preview-window">
+            <span class="preview-label">Browser Output Preview</span>
+            <span
+              style="
+                display: inline-block;
+                width: 120px;
+                height: 40px;
+                background-color: #eff6ff;
+                color: #2563eb;
+                border: 1px solid #2563eb;
+                border-radius: 8px;
+                text-align: center;
+                line-height: 40px;
+                margin-right: 10px;
+              "
+              >Inline-Block 1</span
+            >
+            <span
+              style="
+                display: inline-block;
+                width: 120px;
+                height: 40px;
+                background-color: #eff6ff;
+                color: #2563eb;
+                border: 1px solid #2563eb;
+                border-radius: 8px;
+                text-align: center;
+                line-height: 40px;
+              "
+              >Inline-Block 2</span
+            >
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer>
+      <div class="container foot-grid">
+        <div>
+          <a href="index.html" class="logo light"
+            >&lt;/&gt; .NET <span>Pathshala</span></a
+          >
+          <p>Building the next generation of full-stack software engineers.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#about">About Course</a></li>
+            <li><a href="#programs">Tech Stack</a></li>
+            <li><a href="#admission">Enroll</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>Dhaka, Bangladesh</li>
+            <li>+880 1234 567890</li>
+            <li>admission@dotnetpathshala.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copy">
+        &copy; <span id="year">2020</span> .NET Pathshala. All rights reserved.
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

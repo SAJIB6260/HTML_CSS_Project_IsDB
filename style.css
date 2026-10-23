@@ -156,9 +156,13 @@ ul {
   transition: 0.25s;
 }
 
+.menu a:not(.btn) {
+  color: #2a5bd7;
+}
+
 .menu a:not(.btn):hover,
 .menu a.active:not(.btn) {
-  color: #2a5bd7;
+  color: #f5a623;
 }
 
 .dropdown {
@@ -223,6 +227,7 @@ ul {
   flex-direction: column;
   justify-content: space-between;
 }
+
 .hamburger span {
   display: block;
   height: 3px;
@@ -602,6 +607,53 @@ footer li a:hover {
   border-left-color: var(--primary);
 }
 
+.sidebar a:active,
+.sidebar a.active,
+.sidebar a:target {
+  color: var(--primary);
+  background-color: var(--primary-light);
+  border-left-color: var(--primary);
+}
+
+/* Sub-section Container */
+.sub-section {
+  margin-bottom: 24px;
+  padding: 16px;
+  border-left: 4px solid #4f46e5;
+  background-color: #f8fafc;
+  border-radius: 8px;
+}
+
+.sidebar ol ul {
+  margin-top: 4px;
+  margin-bottom: 8px;
+  margin-left: 14px; /* Main section theke ektu dan dike sorano */
+  padding-left: 10px;
+  border-left: 2px solid var(--border-color); /* Pashe ekta chikon line */
+}
+
+/* Sub-section Links */
+.sidebar ol ul a {
+  font-size: 0.85rem; /* Font size ektu choto */
+  padding: 6px 12px;
+  border-left: 2px solid transparent;
+  margin-bottom: 2px;
+}
+
+.sidebar ol ul a:hover,
+.sidebar ol ul a:active,
+.sidebar ol ul a.active {
+  color: var(--primary);
+  background-color: var(--primary-light);
+  border-left-color: var(--primary);
+}
+
+.sidebar ol ul a:target {
+  color: var(--primary);
+  background-color: var(--primary-light);
+  border-left-color: var(--primary);
+}
+
 /* Main Content Cards */
 .main-content {
   display: flex;
@@ -651,6 +703,20 @@ footer li a:hover {
   color: var(--text-muted);
   margin-bottom: 16px;
   line-height: 1.6;
+}
+
+.sub-section {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px dashed var(--border-color);
+  scroll-margin-top: 110px;
+}
+
+.sub-section h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 12px;
 }
 
 code.inline-code {
@@ -784,7 +850,21 @@ code.inline-code {
 
 @media (max-width: 768px) {
   .menu {
-    display: none;
+    position: fixed;
+    top: 76px;
+    right: -100%;
+    width: 100%;
+    height: calc(100vh - 5rem);
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px;
+    gap: 22px;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+    transition: right 0.35s ease;
+  }
+  .menu.open {
+    right: 0;
   }
   .hamburger {
     display: flex;

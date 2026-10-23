@@ -1,1 +1,497 @@
 # HTML_CSS_Project_IsDB
+
+# Table of Contents
+
+**Web Development Crash Course: HTML5 and CSS3**
+
+## PREFACE
+
+- BOOK AUDIENCE
+- HOW TO CONTACT US
+- ACKNOWLEDGMENTS
+- CONVENTIONS USED IN THIS BOOK
+
+## SETTING UP A DEVELOPMENT ENVIRONMENT
+
+- 1.1 INSTALL A CODE EDITOR
+  - 1.1.1 Install Essential Extensions
+  - 1.1.2 Install Live Server
+  - 1.1.3 Setting Default Formatter
+  - 1.1.4 Enable Formatting Code on Save
+  - 1.1.5 Auto Save Files on Focus Change
+  - 1.1.6 Disable Compact Folders
+  - 1.1.7 Enable Word Wrap
+  - 1.1.8 Set Tab Size Smaller
+- 1.2 USING A WEB BROWSER
+  - 1.2.1 Using Developer Tools in The Browser
+  - 1.2.2 Using Console Tool
+  - 1.2.3 Using Source Tool
+- 1.3 PREPARING A WORKSPACE
+
+## PART I: HTML5
+
+- WHAT WILL YOU LEARN?
+
+- CHAPTER 1 GETTING TO KNOW HTML
+  - 1.1 TWO TYPES OF HTML ELEMENTS
+  - 1.2 HTML DOCUMENT STRUCTURE
+  - 1.3 YOUR FIRST WEBPAGE
+  - 1.4 CHARACTER ENCODING
+  - 1.5 ELEMENT ATTRIBUTES
+  - 1.6 FAVORITE ICON
+  - 1.7 COMMENTS
+
+- CHAPTER 2 HTML ELEMENTS
+  - 2.1 HEADINGS
+  - 2.2 PARAGRAPHS
+  - 2.3 HYPERLINKS
+    - 2.3.1 External Anchors
+    - 2.3.2 Internal Anchors
+    - 2.3.3 Download Links
+  - 2.4 IMAGES
+    - 2.4.1 Image Maps
+    - 2.4.2 Responsive Pictures
+  - 2.5 LISTS
+    - 2.5.1 Unordered List
+    - 2.5.2 Ordered List
+    - 2.5.3 Description Lists
+  - 2.6 TABLES
+    - 2.6.1 Table Headers
+    - 2.6.2 Table Rows
+    - 2.6.3 Table Caption
+    - 2.6.4 Group of Columns
+    - 2.6.5 Column Span
+  - 2.7 BREAKS
+    - 2.7.1 Line Breaking
+    - 2.7.2 Thematic Breaking
+  - 2.8 PROGRESS BARS
+    - 2.8.1 `<progress>`
+    - 2.8.2 `<meter>`
+  - 2.9 COMPUTER CODE
+    - 2.9.1 `<code>`
+    - 2.9.2 `<pre>`
+  - 2.10 IFRAMES
+  - 2.11 HTML ENTITIES
+
+- CHAPTER 3 HTML STYLES
+  - 3.1 FORMATTING ELEMENTS
+    - 3.1.1 `<b>`
+    - 3.1.2 `<i>`
+    - 3.1.3 `<u>` or `<ins>`
+    - 3.1.4 `<s>` or `<del>`
+    - 3.1.5 `<mark>`
+    - 3.1.6 `<sub>` and `<sup>`
+  - 3.2 HTML STYLE ATTRIBUTE
+
+- CHAPTER 4 SEMANTIC HTML
+  - 4.1 SEMANTIC ELEMENTS
+    - 4.1.1 `<blockquote>`
+    - 4.1.2 `<address>`
+    - 4.1.3 `<details>` and `<summary>`
+    - 4.1.4 `<figure>` and `<figcaption>`
+  - 4.2 SEMANTIC LAYOUT ELEMENTS
+  - 4.3 SEMANTIC FORMATTING ELEMENTS
+    - 4.3.1 `<strong>`
+    - 4.3.2 `<em>`
+
+- CHAPTER 5 WEB FORMS
+  - 5.1 HTML FORM ELEMENTS
+    - 5.1.1 `<input>` and `<label>`
+    - 5.1.2 `<textarea>`
+    - 5.1.3 `<select>` and `<option>`
+    - 5.1.4 `<button>`
+    - 5.1.5 `<fieldset>` and `<legend>`
+    - 5.1.6 `<datalist>`
+  - 5.2 HTML INPUT TYPES
+    - 5.2.1 Buttons
+      - 5.2.1.1 button
+      - 5.2.1.2 submit
+      - 5.2.1.3 reset
+      - 5.2.1.4 image
+    - 5.2.2 Texts
+      - 5.2.2.1 text
+      - 5.2.2.2 password
+      - 5.2.2.3 email
+      - 5.2.2.4 url
+      - 5.2.2.5 hidden
+    - 5.2.3 Numbers
+      - 5.2.3.1 number
+      - 5.2.3.2 range
+    - 5.2.4 Options
+      - 5.2.4.1 checkbox
+      - 5.2.4.2 radio
+    - 5.2.5 Files
+    - 5.2.6 Date and Time
+      - 5.2.6.1 date
+      - 5.2.6.2 time
+      - 5.2.6.3 datetime-local
+    - 5.2.7 Colors
+  - 5.3 HTML INPUT ATTRIBUTES
+    - 5.3.1 name
+    - 5.3.2 value
+    - 5.3.3 placeholder
+    - 5.3.4 readonly
+    - 5.3.5 disabled
+    - 5.3.6 size
+    - 5.3.7 multiple
+    - 5.3.8 step
+    - 5.3.9 width and height
+    - 5.3.10 autofocus
+    - 5.3.11 autocomplete
+  - 5.4 FORM VALIDATION
+    - 5.4.1 minlength
+    - 5.4.2 maxlength
+    - 5.4.3 min and max
+    - 5.4.4 required
+    - 5.4.5 pattern
+    - 5.4.6 Styles for The Invalid Inputs
+
+- CHAPTER 6 HTML MULTIMEDIA
+  - 6.1 AUDIO
+  - 6.2 VIDEO
+
+- CHAPTER 7 HTML GRAPHICS
+  - 7.1 SVG GRAPHICS
+    - 7.1.1 SVG Rectangle
+    - 7.1.2 SVG Circle
+    - 7.1.3 SVG Ellipse
+    - 7.1.4 SVG Line
+    - 7.1.5 SVG Polyline
+    - 7.1.6 SVG Polygon
+    - 7.1.7 SVG Path
+    - 7.1.8 SVG Text
+    - 7.1.9 SVG Link
+    - 7.1.10 SVG Stroke
+      - 7.1.10.1 Stroke Color
+      - 7.1.10.2 Stroke Width
+      - 7.1.10.3 Stroke Ending
+      - 7.1.10.4 Dash Stroke
+    - 7.1.11 SVG Gradients
+      - 7.1.11.1 Linear Gradient
+      - 7.1.11.2 Radial Gradient
+    - 7.1.12 SVG Filters
+  - 7.2 CANVAS
+    - 7.2.1 Draw Text
+    - 7.2.2 Draw Lines
+    - 7.2.3 Draw Circles
+    - 7.2.4 Draw Rectangles
+    - 7.2.5 Draw Gradients
+      - 7.2.5.1 Linear Gradient
+      - 7.2.5.2 Radial Gradient
+    - 7.2.6 Draw Images
+
+- CHAPTER 8 HTML ADVANCED
+  - 8.1 DATA URIS
+  - 8.2 BLOCK ELEMENTS
+  - 8.3 INLINE ELEMENTS
+  - 8.4 INLINE-BLOCK ELEMENTS
+
+- CHAPTER 9 HTML EVENTS
+  - 9.1 WINDOW EVENTS
+    - 9.1.1 onload
+    - 9.1.2 onresize
+  - 9.2 FORM EVENTS
+    - 9.2.1 onfocus
+    - 9.2.2 onblur
+    - 9.2.3 onchange
+    - 9.2.4 oninput
+  - 9.3 KEYBOARD EVENTS
+    - 9.3.1 onkeydown
+    - 9.3.2 onkeyup
+    - 9.3.3 onkeypress
+  - 9.4 MOUSE EVENTS
+    - 9.4.1 onclick
+    - 9.4.2 ondblclick
+    - 9.4.3 onmousemove
+    - 9.4.4 onmousedown and onmouseup
+    - 9.4.5 onmouseover and onmouseout
+  - 9.5 CLIPBOARD EVENTS
+    - 9.5.1 oncopy
+    - 9.5.2 oncut
+    - 9.5.3 onpaste
+
+- CHAPTER 10 HTML APIS
+  - 10.1 DRAG AND DROP
+  - 10.2 GEOLOCATION
+  - 10.3 WEB STORAGE
+    - 10.3.1 The localStorage Object
+    - 10.3.2 The sessionStorage Object
+  - 10.4 WEB WORKERS
+    - 10.4.1 Web Worker File
+    - 10.4.2 Web Worker Object
+    - 10.4.3 Web Workers and the DOM
+
+## PART II: CSS3
+
+- WHAT WILL YOU LEARN?
+
+- CHAPTER 11 GETTING TO KNOW CSS
+  - 11.1 CSS SYNTAX
+  - 11.2 COMMENTS IN CSS
+  - 11.3 CSS UNITS
+    - 11.3.1 Absolute Lengths
+    - 11.3.2 Relative Lengths
+      - 11.3.2.1 em
+      - 11.3.2.2 rem
+  - 11.4 SHORTHAND PROPERTIES
+  - 11.5 WHERE DO WE PUT OUR CSS?
+    - 11.5.1 Inline CSS
+    - 11.5.2 Internal CSS
+    - 11.5.3 External CSS
+  - 11.6 USER AGENT STYLE SHEETS
+
+- CHAPTER 12 CSS SELECTORS
+  - 12.1 UNIVERSAL SELECTOR
+  - 12.2 TYPE SELECTOR
+  - 12.3 ID SELECTOR
+  - 12.4 CLASS SELECTOR
+  - 12.5 MULTIPLE-CLASS SELECTOR
+  - 12.6 CSS PSEUDO-CLASS
+    - 12.6.1 Status of Links
+      - 12.6.1.1 :link
+      - 12.6.1.2 :visited
+    - 12.6.2 Cursor Interaction
+      - 12.6.2.1 :focus
+      - 12.6.2.2 :hover
+      - 12.6.2.3 :active
+    - 12.6.3 Status of Elements
+      - 12.6.3.1 :enabled
+      - 12.6.3.2 :disabled
+      - 12.6.3.3 :checked
+    - 12.6.4 Form Validation
+      - 12.6.4.1 :invalid
+      - 12.6.4.2 :required
+      - 12.6.4.3 :out-of-range
+    - 12.6.5 Child Elements
+      - 12.6.5.1 :first-child
+      - 12.6.5.2 :last-child
+      - 12.6.5.3 :nth-child(N)
+      - 12.6.5.4 :nth-last-child(N)
+      - 12.6.5.5 :only-child
+    - 12.6.6 Type of elements
+      - 12.6.6.1 :first-of-type
+      - 12.6.6.2 :last-of-type
+      - 12.6.6.3 :nth-of-type(N)
+      - 12.6.6.4 :nth-last-of-type(N)
+      - 12.6.6.5 :only-of-type
+    - 12.6.7 Others Pseudo-classes
+      - 12.6.7.1 :root
+      - 12.6.7.2 :empty
+      - 12.6.7.3 :target
+      - 12.6.7.4 :not(selector)
+    - 12.6.8 Pseudo-class Chain
+  - 12.7 CSS PSEUDO-ELEMENT
+    - 12.7.1 ::first-letter
+    - 12.7.2 ::first-line
+    - 12.7.3 ::before
+    - 12.7.4 ::after
+    - 12.7.5 ::selection
+  - 12.8 CSS COMBINED SELECTOR
+    - 12.8.1 Descendant selector
+    - 12.8.2 Child Selector
+    - 12.8.3 Adjacent Sibling Selector
+    - 12.8.4 General Sibling Selector
+  - 12.9 CSS ATTRIBUTE SELECTOR
+    - 12.9.1 [attribute]
+    - 12.9.2 [attribute="value"]
+    - 12.9.3 [attribute|="value"]
+    - 12.9.4 [attribute~="value"]
+    - 12.9.5 [attribute^="value"]
+    - 12.9.6 [attribute$="value"]
+    - 12.9.7 [attribute*="value"]
+  - 12.10 SELECTOR GROUPING
+
+- CHAPTER 13 CSS CASCADING
+  - 13.1 RULE 1: THE LAST DECLARATION WILL WIN
+  - 13.2 RULE 2: THE MORE SPECIFIC DECLARATION WILL WIN
+  - 13.3 RULE 3: INLINE STYLE IS PREFERRED TO BOTH INTERNAL AND EXTERNAL STYLES
+  - 13.4 RULE 4: "!IMPORTANT" DECLARATION IS THE STRONGEST RULE
+  - 13.5 INHERITANCE
+
+- CHAPTER 14 CSS BOX MODEL
+  - 14.1 BOX SIZING TYPES
+    - 14.1.1 Border Box
+    - 14.1.2 Content Box
+  - 14.2 CSS MARGINS
+    - 14.2.1 Auto Margin
+    - 14.2.2 Collapsing Margins
+  - 14.3 CSS OUTLINE
+  - 14.4 CSS BORDERS
+    - 14.4.1 Border Styles
+    - 14.4.2 CSS Border Radius
+    - 14.4.3 CSS Border Images
+  - 14.5 CSS PADDING
+  - 14.6 CSS WIDTH AND HEIGHT
+
+- CHAPTER 15 CSS COLORS
+  - 15.1 COLOR NAMES
+  - 15.2 HEX COLORS
+  - 15.3 RGB COLORS
+  - 15.4 GREY COLORS
+
+- CHAPTER 16 CSS TEXT
+  - 16.1 TEXT RENDERING
+    - 16.1.1 Setting Color
+    - 16.1.2 Text Decoration
+    - 16.1.3 Text Transform
+    - 16.1.4 Handling Whitespaces
+    - 16.1.5 Text Overflow
+    - 16.1.6 Word Wrap
+    - 16.1.7 Word Break
+  - 16.2 TEXT SPACING
+    - 16.2.1 Letter Spacing
+    - 16.2.2 Word Spacing
+    - 16.2.3 Line Height
+  - 16.3 TEXT POSITION
+    - 16.3.1 Text Align
+    - 16.3.2 Text Indent
+  - 16.4 CSS FONTS
+    - 16.4.1 Font Family
+    - 16.4.2 Font Size
+    - 16.4.3 Font Weight
+    - 16.4.4 Font Style
+    - 16.4.5 Font Variant
+    - 16.4.6 The @font-face
+
+- CHAPTER 17 CSS BACKGROUNDS
+  - 17.1 CSS BACKGROUND PROPERTIES
+    - 17.1.1 background-color
+    - 17.1.2 background-image
+    - 17.1.3 background-repeat
+    - 17.1.4 background-position
+    - 17.1.5 background-size
+    - 17.1.6 background
+    - 17.1.7 background-clip
+    - 17.1.8 background-origin
+    - 17.1.9 background-attachment
+  - 17.2 CSS GRADIENT BACKGROUNDS
+    - 17.2.1 Linear Gradients
+    - 17.2.2 Repeating Linear Gradients
+    - 17.2.3 Radial Gradients
+    - 17.2.4 Repeating Radial Gradients
+  - 17.3 CSS SPRITES
+
+- CHAPTER 18 CSS DISPLAY
+  - 18.1 DISPLAY VS. VISIBILITY
+    - 18.1.1 display
+    - 18.1.2 visibility
+  - 18.2 CSS OBJECT-FIT
+  - 18.3 CURSOR
+  - 18.4 CSS OVERFLOW
+    - 18.4.1 overflow: visible
+    - 18.4.2 overflow: hidden
+    - 18.4.3 overflow: scroll
+    - 18.4.4 overflow: auto
+  - 18.5 CSS OPACITY
+  - 18.6 CSS SHADOWS
+    - 18.6.1 text-shadow
+    - 18.6.2 box-shadow
+  - 18.7 CSS MULTIPLE COLUMNS
+    - 18.7.1 Fixed Columns
+    - 18.7.2 Responsive Columns
+    - 18.7.3 Column Span
+  - 18.8 CSS TABLES
+    - 18.8.1 Table Sizing
+    - 18.8.2 Text Alignment in Table Cells
+  - 18.9 CSS LISTS
+    - 18.9.1 List Item Markers
+    - 18.9.2 Position the List Item Markers
+  - 18.10 CSS TRANSFORMS
+    - 18.10.1 Moves an Element
+    - 18.10.2 Scales an Element
+    - 18.10.3 Rotates an Element
+    - 18.10.4 Skews an Element
+
+- CHAPTER 19 CSS LAYOUT
+  - 19.1 CSS POSITION
+    - 19.1.1 static
+    - 19.1.2 relative
+    - 19.1.3 absolute
+    - 19.1.4 fixed
+    - 19.1.5 sticky
+  - 19.2 CSS FLOAT
+    - 19.2.1 float
+    - 19.2.2 clear
+  - 19.3 CSS Z-INDEX
+  - 19.4 CSS FLEXBOX
+    - 19.4.1 Flex Container
+      - 19.4.1.1 gap
+      - 19.4.1.2 flex-direction
+      - 19.4.1.3 justify-content
+      - 19.4.1.4 align-items
+      - 19.4.1.5 flex-wrap
+      - 19.4.1.6 align-content
+    - 19.4.2 Flex Items
+      - 19.4.2.1 flex-basis
+      - 19.4.2.2 order
+      - 19.4.2.3 flex-grow
+      - 19.4.2.4 flex-shrink
+      - 19.4.2.5 align-self
+      - 19.4.2.6 flex
+      - 19.4.2.7 Auto Margin for Flex Items
+  - 19.5 CSS GRID
+    - 19.5.1 Grid Container
+      - 19.5.1.1 grid-template-columns
+      - 19.5.1.2 grid-template-rows
+      - 19.5.1.3 column-gap
+      - 19.5.1.4 row-gap
+      - 19.5.1.5 gap
+      - 19.5.1.6 justify-items
+      - 19.5.1.7 align-items
+      - 19.5.1.8 justify-content
+      - 19.5.1.9 align-content
+    - 19.5.2 Grid Items
+      - 19.5.2.1 grid-column-start
+      - 19.5.2.2 grid-column-end
+      - 19.5.2.3 grid-column
+      - 19.5.2.4 grid-row-start
+      - 19.5.2.5 grid-row-end
+      - 19.5.2.6 grid-row
+      - 19.5.2.7 grid-area
+      - 19.5.2.8 justify-self
+      - 19.5.2.9 align-self
+      - 19.5.2.10 grid-template-areas
+  - 19.6 CSS ALIGNMENT
+    - 19.6.1 Horizontal Alignment
+    - 19.6.2 Vertical alignment
+    - 19.6.3 Perfect Centering
+      - 19.6.3.1 Centering Using The position And transform Properties
+      - 19.6.3.2 Centering Using The flex Property
+
+- CHAPTER 20 CSS TRANSITIONS AND ANIMATIONS
+  - 20.1 CSS TRANSITIONS
+    - 20.1.1 Basic Transitions
+    - 20.1.2 Transition Delay
+    - 20.1.3 Transition Timing Function
+    - 20.1.4 Shorthand Transition Property
+  - 20.2 CSS ANIMATIONS
+    - 20.2.1 Two-step Keyframes
+    - 20.2.2 Multiple Keyframes
+    - 20.2.3 Animation Delay
+    - 20.2.4 Animation Iteration Count
+    - 20.2.5 Animation Direction
+    - 20.2.6 Animation Timing Function
+    - 20.2.7 Shorthand Animation Property
+
+- CHAPTER 21 ADVANCED CSS
+  - 21.1 CSS VARIABLES
+  - 21.2 CSS CALCULATION
+  - 21.3 CSS COUNTERS
+
+- CHAPTER 22 RESPONSIVE CSS
+  - 22.1 RESPONSIVE WEB DESIGN
+  - 22.2 RWD VIEWPORT
+  - 22.3 CSS MEDIA
+    - 22.3.1 Media Types
+    - 22.3.2 Media Queries
+  - 22.4 RWD GRID VIEW
+  - 22.5 MOBILE-FIRST VS. DESKTOP-FIRST
+    - 22.5.1 Mobile-First
+    - 22.5.2 Desktop-First
+
+## EXTRAS
+
+- BONUS: FREE EBOOK DOWNLOAD
+- PLEASE LEAVE A REVIEW ON AMAZON
+- ABOUT THE AUTHOR
+- OTHER BOOKS BY THE AUTHOR
