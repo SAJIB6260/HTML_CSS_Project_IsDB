@@ -71,3 +71,31 @@ document.addEventListener("DOMContentLoaded", () => {
     restart();
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const copyButtons = document.querySelectorAll(".copy-btn");
+
+  copyButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const codeContainer = button.closest(".code-window");
+      const codeElement = codeContainer.querySelector("code");
+      const textToCopy = codeElement.innerText;
+
+      // Modern Clipboard API - no page jumping!
+      navigator.clipboard
+        .writeText(textToCopy)
+        .then(() => {
+          const originalText = button.innerText;
+          button.innerText = "Copied!";
+          button.classList.add("copied");
+          setTimeout(() => {
+            button.innerText = originalText;
+            button.classList.remove("copied");
+          }, 2000);
+        })
+        .catch((err) => {
+          console.error("Failed to copy: ", err);
+        });
+    });
+  });
+});

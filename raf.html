@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 02: Basic HTML Elements | .NET Pathshala</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      :root {
+        --primary: #2563eb;
+        --primary-light: #eff6ff;
+        --bg-color: #f8fafc;
+        --card-bg: #ffffff;
+        --text-main: #0f172a;
+        --text-muted: #475569;
+        --border-color: #e2e8f0;
+        --code-bg: #0f172a;
+        --code-header: #1e293b;
+        --radius-md: 8px;
+        --radius-lg: 12px;
+        --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+        --shadow-md:
+          0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      }
+
+      /* Base Layout */
+      body {
+        background-color: var(--bg-color);
+      }
+
+      /* Page Header Design */
+      .page-header {
+        background: linear-gradient(
+          135deg,
+          var(--primary-light) 0%,
+          #ffffff 100%
+        );
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-lg);
+        padding: 48px 32px;
+        text-align: center;
+        margin-bottom: 16px; /* Space before the first section */
+        box-shadow: var(--shadow-sm);
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Background Watermark Icon */
+      .page-header::before {
+        content: "</>";
+        position: absolute;
+        font-size: 180px;
+        font-weight: 900;
+        color: var(--primary);
+        opacity: 0.04;
+        top: -40px;
+        right: -20px;
+        font-family: monospace;
+        transform: rotate(15deg);
+        pointer-events: none;
+      }
+
+      .chapter-badge {
+        display: inline-block;
+        background-color: var(--primary);
+        color: #ffffff;
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        padding: 6px 16px;
+        border-radius: 9999px;
+        margin-bottom: 16px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .page-header h1 {
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: var(--text-main);
+        margin: 0 0 12px 0;
+        line-height: 1.2;
+        position: relative;
+        z-index: 1;
+      }
+
+      .page-header h2 {
+        font-size: 1.1rem;
+        font-weight: 400;
+        color: var(--text-muted);
+        margin: 0;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Mobile Responsive */
+      @media (max-width: 768px) {
+        .page-header {
+          padding: 32px 20px;
+        }
+        .page-header h1 {
+          font-size: 1.8rem;
+        }
+      }
+
+      .layout-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 100px 24px 40px;
+        display: grid;
+        grid-template-columns: 260px 1fr;
+        gap: 40px;
+      }
+
+      /* Sidebar Navigation */
+      .sidebar {
+        position: sticky;
+        top: 100px;
+        height: calc(100vh - 120px);
+        overflow-y: auto;
+      }
+
+      .sidebar::-webkit-scrollbar {
+        width: 4px;
+      }
+      .sidebar::-webkit-scrollbar-thumb {
+        background-color: var(--border-color);
+        border-radius: 4px;
+      }
+
+      .sidebar h3 {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--text-muted);
+        margin-bottom: 16px;
+        font-weight: 700;
+      }
+
+      .sidebar ol {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 0;
+        margin: 0;
+      }
+
+      .sidebar a {
+        text-decoration: none;
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        font-weight: 500;
+        padding: 8px 12px;
+        border-radius: var(--radius-md);
+        display: block;
+        transition: all 0.2s ease;
+        border-left: 3px solid transparent;
+      }
+
+      .sidebar a:hover {
+        color: var(--primary);
+        background-color: var(--primary-light);
+        border-left-color: var(--primary);
+      }
+
+      /* Main Content Cards */
+      .main-content {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        max-width: 100%;
+      }
+
+      .card {
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-lg);
+        padding: 32px;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .card-badge {
+        display: inline-block;
+        background-color: var(--primary-light);
+        color: var(--primary);
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 4px 10px;
+        border-radius: 9999px;
+        margin-bottom: 12px;
+      }
+
+      .card h1 {
+        font-size: 1.75rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+        color: var(--text-main);
+        line-height: 1.3;
+      }
+
+      .card h3 {
+        font-size: 1.1rem;
+        margin: 24px 0 12px;
+        color: var(--text-main);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .card p {
+        color: var(--text-muted);
+        margin-bottom: 16px;
+        line-height: 1.6;
+      }
+
+      code.inline-code {
+        background-color: #f1f5f9;
+        color: #db2777;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: "Fira Code", monospace;
+        font-size: 0.85em;
+      }
+
+      /* Terminal Style Code Blocks */
+      .code-window {
+        background-color: var(--code-bg);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        margin-top: 16px;
+        margin-bottom: 24px;
+        box-shadow: var(--shadow-md);
+        position: relative;
+        width: 100%;
+      }
+
+      .code-header {
+        background-color: var(--code-header);
+        padding: 10px 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .mac-dots {
+        display: flex;
+        gap: 6px;
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+      }
+
+      .dot-red {
+        background-color: #f43f5e;
+      }
+      .dot-yellow {
+        background-color: #f59e0b;
+      }
+      .dot-green {
+        background-color: #10b981;
+      }
+
+      /* Copy Button Styles */
+      .copy-btn {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #e2e8f0;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 4px 12px;
+        border-radius: 6px;
+        font-size: 0.75rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-family: "Inter", sans-serif;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .copy-btn:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        color: #ffffff;
+      }
+
+      .copy-btn.copied {
+        background-color: #10b981;
+        border-color: #10b981;
+        color: white;
+      }
+
+      .code-window pre {
+        margin: 0;
+        padding: 20px;
+        overflow-x: auto;
+      }
+
+      .code-window code {
+        font-family: "Fira Code", monospace;
+        font-size: 0.9rem;
+        color: #e2e8f0;
+        line-height: 1.5;
+        white-space: pre;
+      }
+
+      /* Syntax highlighting colors */
+      .tag {
+        color: #f43f5e;
+        background-color: transparent;
+      }
+      .attr {
+        color: #fcd34d;
+      }
+      .val {
+        color: #6ee7b7;
+      }
+      .comment {
+        color: #64748b;
+      }
+      .doctype {
+        color: #60a5fa;
+      }
+
+      /* Visual Output Preview Box */
+      .preview-window {
+        background-color: #f8fafc;
+        border: 1px dashed #cbd5e1;
+        border-radius: var(--radius-md);
+        padding: 24px;
+        margin-top: 16px;
+        color: var(--text-main);
+      }
+
+      .preview-label {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #64748b;
+        margin-bottom: 16px;
+        font-weight: 700;
+        display: block;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 860px) {
+        .layout-container {
+          grid-template-columns: 1fr;
+          padding: 80px 16px 30px;
+          gap: 24px;
+        }
+
+        .sidebar {
+          position: static;
+          height: auto;
+          background-color: var(--card-bg);
+          padding: 20px;
+          border-radius: var(--radius-lg);
+          border: 1px solid var(--border-color);
+          box-shadow: var(--shadow-sm);
+        }
+
+        .card {
+          padding: 20px;
+        }
+        .card h1 {
+          font-size: 1.5rem;
+        }
+        .code-window pre {
+          padding: 16px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .card h1 {
+          font-size: 1.25rem;
+        }
+        .code-window code {
+          font-size: 0.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar" id="navbar">
+      <div class="container nav-inner">
+        <div class="logo">
+          <a href="index.html">&lt;/&gt; .NET <span>Pathshala</span></a>
+        </div>
+        <nav>
+          <ul class="menu" id="menu">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#programs">Tech Stack</a></li>
+
+            <li class="dropdown">
+              <a href="#chapters" style="cursor: pointer">HTML & CSS ▾</a>
+              <div class="dropdown-content">
+                <a href="chapter_01.html">01. Getting to Know HTML</a>
+                <a href="chapter_02.html">02. Basic HTML Elements</a>
+                <a href="chapter_03.html">03. HTML Styles & Formatting</a>
+                <a href="chapter_04.html">04. Semantic HTML</a>
+                <a href="chapter_05.html">05. Web Forms</a>
+                <a href="chapter_06.html">06. HTML Multimedia</a>
+                <a href="chapter_07.html">07. HTML Graphics (SVG & Canvas)</a>
+                <a href="chapter_08.html">08. Advanced HTML</a>
+                <a href="chapter_09.html">09. HTML Events</a>
+                <a href="chapter_10.html">10. HTML APIs</a>
+                <a href="chapter_11.html">11. Getting to Know CSS</a>
+                <a href="chapter_12.html">12. CSS Selectors</a>
+                <a href="chapter_13.html">13. CSS Cascading</a>
+                <a href="chapter_14.html">14. CSS Box Model</a>
+                <a href="chapter_15.html">15. CSS Colors</a>
+                <a href="chapter_16.html">16. CSS Text & Fonts</a>
+                <a href="chapter_17.html">17. CSS Backgrounds</a>
+                <a href="chapter_18.html">18. CSS Display & Effects</a>
+                <a href="chapter_19.html">19. CSS Layout (Flexbox & Grid)</a>
+                <a href="chapter_20.html">20. CSS Transitions & Animations</a>
+                <a href="chapter_21.html">21. Advanced CSS</a>
+                <a href="chapter_22.html">22. Responsive CSS</a>
+              </div>
+            </li>
+
+            <li>
+              <a href="#admission" class="btn small">Enroll Now</a>
+            </li>
+          </ul>
+        </nav>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="layout-container">
+      <nav class="sidebar">
+        <h3>Table of Contents</h3>
+        <ol>
+          <li><a href="#headings">2.1 Headings</a></li>
+          <li><a href="#paragraphs">2.2 Paragraphs</a></li>
+          <li><a href="#links">2.3 Hyperlinks</a></li>
+          <li><a href="#images">2.4 Images</a></li>
+          <li><a href="#lists">2.5 Lists</a></li>
+          <li><a href="#tables">2.6 Tables</a></li>
+          <li><a href="#breaks">2.7 Breaks</a></li>
+          <li><a href="#progress">2.8 Progress Bars</a></li>
+        </ol>
+      </nav>
+
+      <!-- MAIN CONTENT -->
+      <main class="main-content">
+        <header class="page-header">
+          <span class="chapter-badge">Chapter 02</span>
+          <h1>Basic HTML Elements & Structure</h1>
+          <h2>Master the foundational building blocks of web development</h2>
+        </header>
+
+        <section id="" class="card"></section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const copyButtons = document.querySelectorAll(".copy-btn");
+
+        copyButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            const codeContainer = button.closest(".code-window");
+            const codeElement = codeContainer.querySelector("code");
+            const textToCopy = codeElement.innerText;
+
+            // Modern Clipboard API - no page jumping!
+            navigator.clipboard
+              .writeText(textToCopy)
+              .then(() => {
+                const originalText = button.innerText;
+                button.innerText = "Copied!";
+                button.classList.add("copied");
+                setTimeout(() => {
+                  button.innerText = originalText;
+                  button.classList.remove("copied");
+                }, 2000);
+              })
+              .catch((err) => {
+                console.error("Failed to copy: ", err);
+              });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

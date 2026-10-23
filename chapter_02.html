@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 02: Basic HTML Elements | .NET Pathshala</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="navbar" id="navbar">
+      <div class="container nav-inner">
+        <div class="logo">
+          <a href="index.html">&lt;/&gt; .NET <span>Pathshala</span></a>
+        </div>
+        <nav>
+          <ul class="menu" id="menu">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#programs">Tech Stack</a></li>
+
+            <li class="dropdown">
+              <a href="#chapters" style="cursor: pointer">HTML & CSS ▾</a>
+              <div class="dropdown-content">
+                <a href="chapter_01.html">01. Getting to Know HTML</a>
+                <a href="chapter_02.html">02. Basic HTML Elements</a>
+                <a href="chapter_03.html">03. HTML Styles & Formatting</a>
+                <a href="chapter_04.html">04. Semantic HTML</a>
+                <a href="chapter_05.html">05. Web Forms</a>
+                <a href="chapter_06.html">06. HTML Multimedia</a>
+                <a href="chapter_07.html">07. HTML Graphics (SVG & Canvas)</a>
+                <a href="chapter_08.html">08. Advanced HTML</a>
+                <a href="chapter_09.html">09. HTML Events</a>
+                <a href="chapter_10.html">10. HTML APIs</a>
+                <a href="chapter_11.html">11. Getting to Know CSS</a>
+                <a href="chapter_12.html">12. CSS Selectors</a>
+                <a href="chapter_13.html">13. CSS Cascading</a>
+                <a href="chapter_14.html">14. CSS Box Model</a>
+                <a href="chapter_15.html">15. CSS Colors</a>
+                <a href="chapter_16.html">16. CSS Text & Fonts</a>
+                <a href="chapter_17.html">17. CSS Backgrounds</a>
+                <a href="chapter_18.html">18. CSS Display & Effects</a>
+                <a href="chapter_19.html">19. CSS Layout (Flexbox & Grid)</a>
+                <a href="chapter_20.html">20. CSS Transitions & Animations</a>
+                <a href="chapter_21.html">21. Advanced CSS</a>
+                <a href="chapter_22.html">22. Responsive CSS</a>
+              </div>
+            </li>
+
+            <li>
+              <a href="#admission" class="btn small">Enroll Now</a>
+            </li>
+          </ul>
+        </nav>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="header-container">
+      <header class="page-header">
+        <span class="chapter-badge">Chapter 02</span>
+        <h1>Basic HTML Elements & Structure</h1>
+        <h2>Master the foundational building blocks of web development</h2>
+      </header>
+    </div>
+
+    <div class="layout-container">
+      <nav class="sidebar">
+        <h3>Table of Contents</h3>
+        <ol>
+          <li><a href="#headings">2.1 Headings</a></li>
+          <li><a href="#paragraphs">2.2 Paragraphs</a></li>
+          <li><a href="#links">2.3 Hyperlinks</a></li>
+          <li><a href="#images">2.4 Images</a></li>
+          <li><a href="#lists">2.5 Lists</a></li>
+          <li><a href="#tables">2.6 Tables</a></li>
+          <li><a href="#breaks">2.7 Breaks</a></li>
+          <li><a href="#progress">2.8 Progress Bars</a></li>
+        </ol>
+      </nav>
+
+      <!-- MAIN CONTENT -->
+      <main class="main-content">
+        <section id="headings" class="card">
+          <span class="card-badge">Section 2.1</span>
+          <h1>HTML Headings</h1>
+          <p>
+            HTML has six levels of headings, from
+            <code class="inline-code">&lt;h1&gt;</code> (most important) to
+            <code class="inline-code">&lt;h6&gt;</code> (least important).
+            Headings are used by search engines to understand the structure of
+            your web page.
+          </p>
+
+          <h3>Code Example</h3>
+          <div class="code-window">
+            <div class="code-header">
+              <div class="mac-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+              </div>
+              <button class="copy-btn">Copy</button>
+            </div>
+            <pre><code>&lt;<span class="tag">h1</span>&gt;Heading 1&lt;/<span class="tag">h1</span>&gt;
+&lt;<span class="tag">h2</span>&gt;Heading 2&lt;/<span class="tag">h2</span>&gt;
+&lt;<span class="tag">h3</span>&gt;Heading 3&lt;/<span class="tag">h3</span>&gt;
+&lt;<span class="tag">h4</span>&gt;Heading 4&lt;/<span class="tag">h4</span>&gt;
+&lt;<span class="tag">h5</span>&gt;Heading 5&lt;/<span class="tag">h5</span>&gt;
+&lt;<span class="tag">h6</span>&gt;Heading 6&lt;/<span class="tag">h6</span>&gt;</code></pre>
+          </div>
+
+          <h3>Visual Example</h3>
+          <div class="preview-window">
+            <span class="preview-label">Browser Output Preview</span>
+            <h1
+              style="
+                margin: 0 0 10px;
+                font-size: 2.2em;
+                font-weight: bold;
+                line-height: 1;
+              "
+            >
+              Heading 1
+            </h1>
+            <h2
+              style="
+                margin: 0 0 10px;
+                font-size: 1.8em;
+                font-weight: bold;
+                line-height: 1;
+              "
+            >
+              Heading 2
+            </h2>
+            <h3
+              style="
+                margin: 0 0 10px;
+                font-size: 1.4em;
+                font-weight: bold;
+                line-height: 1;
+              "
+            >
+              Heading 3
+            </h3>
+            <h4
+              style="
+                margin: 0 0 10px;
+                font-size: 1.1em;
+                font-weight: bold;
+                line-height: 1;
+              "
+            >
+              Heading 4
+            </h4>
+            <h5
+              style="
+                margin: 0 0 10px;
+                font-size: 0.9em;
+                font-weight: bold;
+                line-height: 1;
+              "
+            >
+              Heading 5
+            </h5>
+            <h6
+              style="
+                margin: 0 0 0 0;
+                font-size: 0.7em;
+                font-weight: bold;
+                line-height: 1;
+              "
+            >
+              Heading 6
+            </h6>
+          </div>
+        </section>
+
+        <section id="paragraphs" class="card">
+          <span class="card-badge">Section 2.2</span>
+          <h1>HTML Paragraphs</h1>
+          <p>
+            Paragraphs are defined with the
+            <code class="inline-code">&lt;p&gt;</code> tag. A paragraph always
+            starts on a new line, and browsers automatically add some white
+            space (a margin) before and after a paragraph.
+          </p>
+
+          <h3>Code Example</h3>
+          <div class="code-window">
+            <div class="code-header">
+              <div class="mac-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+              </div>
+              <button class="copy-btn">Copy</button>
+            </div>
+            <pre><code>&lt;<span class="tag">p</span>&gt;This is a standard paragraph of text.&lt;/<span class="tag">p</span>&gt;
+&lt;<span class="tag">p</span>&gt;This is another paragraph.&lt;/<span class="tag">p</span>&gt;</code></pre>
+          </div>
+
+          <h3>Visual Example</h3>
+          <div class="preview-window">
+            <span class="preview-label">Browser Output Preview</span>
+            <p style="margin-bottom: 16px; color: #0f172a">
+              This is a standard paragraph of text.
+            </p>
+            <p style="margin-bottom: 0; color: #0f172a">
+              This is another paragraph.
+            </p>
+          </div>
+        </section>
+
+        <section id="links" class="card">
+          <span class="card-badge">Section 2.3</span>
+          <h1>Hyperlinks</h1>
+          <p>
+            Links are created using the
+            <code class="inline-code">&lt;a&gt;</code> (anchor) tag. The
+            <code class="inline-code">href</code> attribute specifies the
+            destination URL.
+          </p>
+
+          <h3>Code Example</h3>
+          <div class="code-window">
+            <div class="code-header">
+              <div class="mac-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+              </div>
+              <button class="copy-btn">Copy</button>
+            </div>
+            <pre><code><span class="comment">&lt;!-- External Link --&gt;</span>
+&lt;<span class="tag">a</span> <span class="attr">href</span>=<span class="val">"https://www.google.com"</span> <span class="attr">target</span>=<span class="val">"_blank"</span>&gt;Visit Google&lt;/<span class="tag">a</span>&gt;
+
+<span class="comment">&lt;!-- Internal Link (to another page) --&gt;</span>
+&lt;<span class="tag">a</span> <span class="attr">href</span>=<span class="val">"about.html"</span>&gt;About Us&lt;/<span class="tag">a</span>&gt;</code></pre>
+          </div>
+
+          <h3>Visual Example</h3>
+          <div class="preview-window">
+            <span class="preview-label">Browser Output Preview</span>
+            <a
+              href="#"
+              style="
+                color: #2563eb;
+                text-decoration: underline;
+                display: block;
+                margin-bottom: 8px;
+              "
+              >Visit Google</a
+            >
+            <a
+              href="#"
+              style="color: #2563eb; text-decoration: underline; display: block"
+              >About Us</a
+            >
+          </div>
+        </section>
+
+        <section id="images" class="card">
+          <span class="card-badge">Section 2.4</span>
+          <h1>Images</h1>
+          <p>
+            Images are embedded using the
+            <code class="inline-code">&lt;img&gt;</code> tag. It is a void
+            element (no closing tag). The
+            <code class="inline-code">src</code> attribute holds the image path,
+            and <code class="inline-code">alt</code> provides alternative text.
+          </p>
+
+          <h3>Code Example</h3>
+          <div class="code-window">
+            <div class="code-header">
+              <div class="mac-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+              </div>
+              <button class="copy-btn">Copy</button>
+            </div>
+            <pre><code>&lt;<span class="tag">img</span> <span class="attr">src</span>=<span class="val">"/image/my_picture.png"</span> <span class="attr">alt</span>=<span class="val">"my_picture"</span> <span class="attr">width</span>=<span class="val">"200px"</span> <span class="attr">Height</span>=<span class="val">"200px"</span>&gt;</code></pre>
+          </div>
+
+          <h3>Visual Example</h3>
+          <div class="preview-window">
+            <span class="preview-label">Browser Output Preview</span>
+            <img
+              src="image/my_picture.png"
+              alt="my_picture"
+              width="200px"
+              height="200px"
+              style="border-radius: 4px; border: 1px solid #cbd5e1"
+            />
+          </div>
+        </section>
+
+        <section id="lists" class="card">
+          <span class="card-badge">Section 2.5</span>
+          <h1>Lists</h1>
+          <p>
+            HTML supports Unordered Lists (bullet points) and Ordered Lists
+            (numbered).
+          </p>
+
+          <h3>Code Example</h3>
+          <div class="code-window">
+            <div class="code-header">
+              <div class="mac-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+              </div>
+              <button class="copy-btn">Copy</button>
+            </div>
+            <pre><code><span class="comment">&lt;!-- Unordered List --&gt;</span>
+&lt;<span class="tag">ul</span>&gt;
+    &lt;<span class="tag">li</span>&gt;HTML&lt;/<span class="tag">li</span>&gt;
+    &lt;<span class="tag">li</span>&gt;CSS&lt;/<span class="tag">li</span>&gt;
+&lt;/<span class="tag">ul</span>&gt;
+
+<span class="comment">&lt;!-- Ordered List --&gt;</span>
+&lt;<span class="tag">ol</span>&gt;
+    &lt;<span class="tag">li</span>&gt;Step One&lt;/<span class="tag">li</span>&gt;
+    &lt;<span class="tag">li</span>&gt;Step Two&lt;/<span class="tag">li</span>&gt;
+&lt;/<span class="tag">ol</span>&gt;</code></pre>
+          </div>
+
+          <h3>Visual Example</h3>
+          <div class="preview-window">
+            <span class="preview-label">Browser Output Preview</span>
+            <ul
+              style="
+                margin-left: 24px;
+                margin-bottom: 20px;
+                list-style-type: disc;
+                color: #0f172a;
+              "
+            >
+              <li style="margin-bottom: 4px">HTML</li>
+              <li>CSS</li>
+            </ul>
+            <ol
+              style="
+                margin-left: 24px;
+                list-style-type: decimal;
+                color: #0f172a;
+              "
+            >
+              <li style="margin-bottom: 4px">Step One</li>
+              <li>Step Two</li>
+            </ol>
+          </div>
+        </section>
+
+        <section id="tables" class="card">
+          <span class="card-badge">Section 2.6</span>
+          <h1>Tables</h1>
+          <p>Tables are used to display data in rows and columns.</p>
+
+          <h3>Code Example</h3>
+          <div class="code-window">
+            <div class="code-header">
+              <div class="mac-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+              </div>
+              <button class="copy-btn">Copy</button>
+            </div>
+            <pre><code>&lt;<span class="tag">table</span> <span class="attr">border</span>=<span class="val">"1"</span>&gt;
+    &lt;<span class="tag">tr</span>&gt;
+        &lt;<span class="tag">th</span>&gt;Name&lt;/<span class="tag">th</span>&gt;
+        &lt;<span class="tag">th</span>&gt;Role&lt;/<span class="tag">th</span>&gt;
+    &lt;/<span class="tag">tr</span>&gt;
+    &lt;<span class="tag">tr</span>&gt;
+        &lt;<span class="tag">td</span>&gt;John&lt;/<span class="tag">td</span>&gt;
+        &lt;<span class="tag">td</span>&gt;Admin&lt;/<span class="tag">td</span>&gt;
+    &lt;/<span class="tag">tr</span>&gt;
+&lt;/<span class="tag">table</span>&gt;</code></pre>
+          </div>
+
+          <h3>Visual Example</h3>
+          <div class="preview-window">
+            <span class="preview-label">Browser Output Preview</span>
+            <table
+              style="
+                width: 100%;
+                border-collapse: collapse;
+                text-align: left;
+                font-size: 0.95rem;
+                color: #0f172a;
+              "
+            >
+              <tr style="background-color: #f1f5f9">
+                <th style="border: 1px solid #cbd5e1; padding: 10px">Name</th>
+                <th style="border: 1px solid #cbd5e1; padding: 10px">Role</th>
+              </tr>
+              <tr>
+                <td style="border: 1px solid #cbd5e1; padding: 10px">John</td>
+                <td style="border: 1px solid #cbd5e1; padding: 10px">Admin</td>
+              </tr>
+            </table>
+          </div>
+        </section>
+
+        <section id="breaks" class="card">
+          <span class="card-badge">Section 2.7</span>
+          <h1>Breaks</h1>
+          <p>
+            Use <code class="inline-code">&lt;br&gt;</code> for a line break and
+            <code class="inline-code">&lt;hr&gt;</code> for a thematic break
+            (horizontal line).
+          </p>
+
+          <h3>Code Example</h3>
+          <div class="code-window">
+            <div class="code-header">
+              <div class="mac-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+              </div>
+              <button class="copy-btn">Copy</button>
+            </div>
+            <pre><code>&lt;<span class="tag">p</span>&gt;First Line&lt;<span class="tag">br</span>&gt;Second Line&lt;/<span class="tag">p</span>&gt;
+&lt;<span class="tag">hr</span>&gt;</code></pre>
+          </div>
+
+          <h3>Visual Example</h3>
+          <div class="preview-window">
+            <span class="preview-label">Browser Output Preview</span>
+            <p style="margin-bottom: 16px; color: #0f172a">
+              First Line<br />Second Line
+            </p>
+            <hr
+              style="border: none; border-top: 1px solid #cbd5e1; margin: 0"
+            />
+          </div>
+        </section>
+
+        <section id="progress" class="card">
+          <span class="card-badge">Section 2.8</span>
+          <h1>Progress Bars</h1>
+          <p>
+            The <code class="inline-code">&lt;progress&gt;</code> tag represents
+            the completion progress of a task.
+          </p>
+
+          <h3>Code Example</h3>
+          <div class="code-window">
+            <div class="code-header">
+              <div class="mac-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+              </div>
+              <button class="copy-btn">Copy</button>
+            </div>
+            <pre><code>&lt;<span class="tag">progress</span> <span class="attr">value</span>=<span class="val">"30"</span> <span class="attr">max</span>=<span class="val">"100"</span>&gt;30%&lt;/<span class="tag">progress</span>&gt;</code></pre>
+          </div>
+
+          <h3>Visual Example</h3>
+          <div class="preview-window">
+            <span class="preview-label">Browser Output Preview</span>
+            <progress
+              value="30"
+              max="100"
+              style="width: 100%; height: 24px; accent-color: #2563eb"
+            ></progress>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
