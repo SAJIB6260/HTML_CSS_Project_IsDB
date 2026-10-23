@@ -15,12 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }),
     );
   }
+});
 
-  // Slider Auto Change
+document.addEventListener("DOMContentLoaded", () => {
   const slides = document.querySelectorAll(".slide");
   const dotsWrap = document.getElementById("dots");
 
-  // চেক করছি পেজে স্লাইডার আছে কিনা
   if (slides.length > 0 && dotsWrap) {
     let index = 0,
       timer;
