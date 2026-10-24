@@ -58,11 +58,11 @@
     </header>
     <div class="header-container">
       <header class="page-header">
-        <span class="chapter-badge">Chapter 05</span>
-        <h1>Web Forms</h1>
+        <span class="chapter-badge">Chapter 09</span>
+        <h1>HTML Events</h1>
         <h2>
-          "Learn how to collect user input and create interactive data-entry
-          interfaces using HTML forms"
+          "Learn how to make your web pages interactive by triggering JavaScript
+          actions with HTML event attributes"
         </h2>
       </header>
     </div>
@@ -72,47 +72,79 @@
         <h3>Table of Contents</h3>
         <ol>
           <li>
-            <a href="#section-1">5.1 Html Form Elements</a>
+            <a href="#windowEvents">9.1 Window Events</a>
             <ul>
-              <li><a href="#subsection-1-1">5.1.1 Subsection Name</a></li>
-              <li><a href="#subsection-1-2">5..2 Subsection Name</a></li>
+              <li><a href="#eventOnload">9.1.1 Onload</a></li>
+              <li><a href="#eventOnresize">9.1.2 Onresize</a></li>
             </ul>
           </li>
           <li>
-            <a href="#section-2">5.2 Html Input Types</a>
+            <a href="#formEvents">9.2 Form Events</a>
+            <ul>
+              <li><a href="#eventOnfocus">9.2.1 Onfocus</a></li>
+              <li><a href="#eventOnblur">9.2.2 Onblur</a></li>
+              <li><a href="#eventOnchange">9.2.3 Onchange</a></li>
+              <li><a href="#eventOninput">9.2.4 Oninput</a></li>
+            </ul>
           </li>
           <li>
-            <a href="#section-2">5.3 Html Input Attributes</a>
+            <a href="#keyboardEvents">9.3 Keyboard Events</a>
+            <ul>
+              <li><a href="#eventOnkeydown">9.3.1 Onkeydown</a></li>
+              <li><a href="#eventOnkeyup">9.3.2 Onkeyup</a></li>
+              <li><a href="#eventOnkeypress">9.3.3 Onkeypress</a></li>
+            </ul>
           </li>
           <li>
-            <a href="#section-2">5.4 Form Validation</a>
+            <a href="#mouseEvents">9.4 Mouse Events</a>
+            <ul>
+              <li><a href="#eventOnclick">9.4.1 Onclick</a></li>
+              <li><a href="#eventOndblclick">9.4.2 Ondblclick</a></li>
+              <li><a href="#eventOnmousemove">9.4.3 Onmousemove</a></li>
+              <li>
+                <a href="#eventOnmousedownUp"
+                  >9.4.4 Onmousedown and Onmouseup</a
+                >
+              </li>
+              <li>
+                <a href="#eventOnmouseoverOut"
+                  >9.4.5 Onmouseover and Onmouseout</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#clipboardEvents">9.3 Clipboard Events</a>
+            <ul>
+              <li><a href="#eventOncopy">9.5.1 Oncopy</a></li>
+              <li><a href="#eventOncut">9.5.2 Oncut</a></li>
+              <li><a href="#eventOnpaste">9.5.3 Onpaste</a></li>
+            </ul>
           </li>
         </ol>
       </nav>
 
       <main class="main-content">
-        <section id="section-1" class="card">
-          <span class="card-badge">Section 1.0</span>
-          <h1>Images</h1>
+        <section id="windowEvents" class="card">
+          <span class="card-badge">Section 9.1</span>
+          <h1>Window Events</h1>
           <p>
-            Images are embedded using the
-            <code class="inline-code">&lt;img&gt;</code> tag. It is a void
-            element (no closing tag). The
-            <code class="inline-code">src</code> attribute holds the image path,
-            and <code class="inline-code">alt</code> provides alternative text.
+            HTML can let events trigger actions in a browser, like invoking a
+            JavaScript function when users interact with the window[cite: 133].
           </p>
 
-          <!-- Sub-section Start -->
-          <div id="subsection-1-1" class="sub-section">
-            <h4>1.1 Image Attributes (Sub-section)</h4>
+          <div id="eventOnload" class="sub-section">
+            <h4>9.1.1 onload</h4>
             <p>
-              Along with <code class="inline-code">src</code> and
-              <code class="inline-code">alt</code>, you can also use
-              <code class="inline-code">width</code> and
-              <code class="inline-code">height</code> attributes to specify the
-              size of the image.
+              The <code class="inline-code">onload</code> attribute fired when
+              the browser finished loading a webpage[cite: 133]. We usually
+              handle the <code class="inline-code">onload</code> event on these
+              elements: <code class="inline-code">&lt;body&gt;</code>,
+              <code class="inline-code">&lt;iframe&gt;</code>,
+              <code class="inline-code">&lt;img&gt;</code>,
+              <code class="inline-code">&lt;link&gt;</code>, and
+              <code class="inline-code">&lt;script&gt;</code>[cite: 133].
             </p>
-
             <h3>Code Example</h3>
             <div class="code-window">
               <div class="code-header">
@@ -123,42 +155,1514 @@
                 </div>
                 <button class="copy-btn">Copy</button>
               </div>
-              <pre><code>&lt;img src="image.jpg" alt="Example" width="500" height="300"&gt;</code></pre>
+              <pre><code>&lt;<span class="tag">script</span>&gt;
+  function eventHandler() {
+    alert("Page is loaded");
+  }
+&lt;/<span class="tag">script</span>&gt;
+&lt;<span class="tag">body</span> <span class="attr">onload</span>=<span class="val">"eventHandler()"</span>&gt;
+  &lt;<span class="tag">h1</span>&gt;This is a heading&lt;/<span class="tag">h1</span>&gt;
+&lt;/<span class="tag">body</span>&gt;</code></pre>
             </div>
             <h3>Visual Example</h3>
             <div class="preview-window">
               <span class="preview-label">Browser Output Preview</span>
+              <div
+                id="onload-preview-box"
+                style="
+                  padding: 12px;
+                  background-color: #eff6ff;
+                  color: #1c2540;
+                  border: 1px solid #e2e8f0;
+                  border-radius: 8px;
+                  text-align: center;
+                  font-weight: bold;
+                "
+              >
+                Loading status will appear here...
+              </div>
+              <script>
+                (function () {
+                  setTimeout(() => {
+                    let el = document.getElementById("onload-preview-box");
+                    if (el) {
+                      el.innerHTML =
+                        "<span style='color: #2563eb;'>✔ Success:</span> Page is loaded! (onload event triggered)";
+                      el.style.backgroundColor = "#eef3ff";
+                      el.style.borderColor = "#2a5bd7";
+                    }
+                  }, 800);
+                })();
+              </script>
             </div>
           </div>
-          <!-- Sub-section End -->
+
+          <div id="eventOnresize" class="sub-section">
+            <h4>9.1.2 onresize</h4>
+            <p>
+              The <code class="inline-code">onresize</code> attribute fires when
+              the browser window is resized[cite: 133].
+            </p>
+            <h3>Code Example</h3>
+            <div class="code-window">
+              <div class="code-header">
+                <div class="mac-dots">
+                  <div class="dot dot-red"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-green"></div>
+                </div>
+                <button class="copy-btn">Copy</button>
+              </div>
+              <pre><code>&lt;<span class="tag">script</span>&gt;
+  function eventHandler() {
+    alert("You have changed the size of your browser window!");
+  }
+&lt;/<span class="tag">script</span>&gt;
+&lt;<span class="tag">body</span> <span class="attr">onresize</span>=<span class="val">"eventHandler()"</span>&gt;
+  &lt;<span class="tag">h1</span>&gt;This is a heading&lt;/<span class="tag">h1</span>&gt;
+&lt;/<span class="tag">body</span>&gt;</code></pre>
+            </div>
+            <h3>Visual Example</h3>
+            <div
+              class="preview-window"
+              style="
+                background-color: #f8fafc;
+                border: 1px solid #e2e8f0;
+                border-radius: 8px;
+                padding: 12px;
+              "
+            >
+              <span class="preview-label">Browser Output Preview</span>
+              <p style="color: #475569; font-size: 14px; margin-bottom: 8px">
+                Drag the bottom-right corner of the text box below to simulate a
+                resize event:
+              </p>
+              <textarea
+                id="resize-preview-box"
+                style="
+                  width: 100%;
+                  height: 60px;
+                  border: 1px solid #2563eb;
+                  border-radius: 8px;
+                  padding: 8px;
+                  resize: both;
+                  background-color: #ffffff;
+                  color: #0f172a;
+                "
+                placeholder="Resize me!"
+              ></textarea>
+              <p
+                id="resize-status"
+                style="
+                  color: #f5a623;
+                  margin-top: 10px;
+                  font-weight: bold;
+                  background-color: #1e293b;
+                  padding: 8px;
+                  border-radius: 8px;
+                  display: inline-block;
+                "
+              >
+                Resize event count: 0
+              </p>
+
+              <script>
+                (function () {
+                  const box = document.getElementById("resize-preview-box");
+                  const status = document.getElementById("resize-status");
+                  let count = 0;
+                  if (window.ResizeObserver && box) {
+                    const observer = new ResizeObserver(() => {
+                      count++;
+                      if (count > 1) {
+                        status.innerText =
+                          "Resize event count: " +
+                          (count - 1) +
+                          " (onresize triggered!)";
+                      }
+                    });
+                    observer.observe(box);
+                  }
+                })();
+              </script>
+            </div>
+          </div>
         </section>
 
-        <section id="section-2" class="card">
-          <span class="card-badge">Section 1.0</span>
-          <h1>Images</h1>
+        <section id="formEvents" class="card">
+          <span class="card-badge">Section 9.2</span>
+          <h1>Form Events</h1>
           <p>
-            Images are embedded using the
-            <code class="inline-code">&lt;img&gt;</code> tag. It is a void
-            element (no closing tag). The
-            <code class="inline-code">src</code> attribute holds the image path,
-            and <code class="inline-code">alt</code> provides alternative text.
+            Form events are triggered when a user interacts with HTML form
+            controls like text inputs, dropdowns, or radio buttons[cite: 135].
+            They are incredibly useful for validating user data, giving
+            real-time feedback, and making forms much more interactive.
           </p>
 
-          <h3>Code Example</h3>
-          <div class="code-window">
-            <div class="code-header">
-              <div class="mac-dots">
-                <div class="dot dot-red"></div>
-                <div class="dot dot-yellow"></div>
-                <div class="dot dot-green"></div>
+          <div id="eventOnfocus" class="sub-section">
+            <h4>9.2.1 onfocus</h4>
+            <p>
+              The <code class="inline-code">onfocus</code> attribute fires the
+              moment an element gets focused[cite: 135]. For example, when a
+              user clicks inside a text box to start typing, or uses the "Tab"
+              key to navigate to it, the field becomes "focused". This is often
+              used to highlight the active input field by changing its
+              background color[cite: 135].
+            </p>
+            <h3>Code Example</h3>
+            <div class="code-window">
+              <div class="code-header">
+                <div class="mac-dots">
+                  <div class="dot dot-red"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-green"></div>
+                </div>
+                <button class="copy-btn">Copy</button>
               </div>
-              <button class="copy-btn">Copy</button>
+              <pre><code>&lt;<span class="tag">script</span>&gt;
+  function handleFocus(input) {
+    input.style.background = "yellow";
+  }
+&lt;/<span class="tag">script</span>&gt;
+&lt;<span class="tag">body</span>&gt;
+  First name: &lt;<span class="tag">input</span> <span class="attr">type</span>=<span class="val">"text"</span> <span class="attr">onfocus</span>=<span class="val">"handleFocus(this)"</span> /&gt;
+&lt;/<span class="tag">body</span>&gt;</code></pre>
             </div>
-            <pre><code>&lt;img src="image.jpg" alt="Example" width="500" height="300"&gt;</code></pre>
+            <h3>Visual Example</h3>
+            <div
+              class="preview-window"
+              style="
+                background-color: #f8fafc;
+                border: 1px solid #e2e8f0;
+                border-radius: 8px;
+                padding: 16px;
+              "
+            >
+              <span class="preview-label">Browser Output Preview</span>
+              <label
+                style="color: #1c2540; font-weight: bold; margin-right: 8px"
+                >Click inside to focus:</label
+              >
+              <input
+                type="text"
+                id="preview-focus"
+                placeholder="Type here..."
+                style="
+                  padding: 8px;
+                  border: 1px solid #2563eb;
+                  border-radius: 8px;
+                  outline: none;
+                  transition: 0.3s;
+                "
+              />
+              <p
+                id="focus-msg"
+                style="
+                  color: #f5a623;
+                  margin-top: 8px;
+                  height: 20px;
+                  font-weight: bold;
+                "
+              ></p>
+
+              <script>
+                (function () {
+                  const input = document.getElementById("preview-focus");
+                  const msg = document.getElementById("focus-msg");
+                  if (input) {
+                    input.addEventListener("focus", function () {
+                      this.style.backgroundColor = "#eef3ff"; // Soft blue highlight
+                      msg.innerText = "Element is focused!";
+                    });
+                    input.addEventListener("blur", function () {
+                      this.style.backgroundColor = "#ffffff";
+                      msg.innerText = "";
+                    });
+                  }
+                })();
+              </script>
+            </div>
           </div>
-          <h3>Visual Example</h3>
-          <div class="preview-window">
-            <span class="preview-label">Browser Output Preview</span>
+
+          <div id="eventOnblur" class="sub-section">
+            <h4>9.2.2 onblur</h4>
+            <p>
+              The <code class="inline-code">onblur</code> attribute is the exact
+              opposite of onfocus. It fires when the element loses focus[cite:
+              135]. If a user clicks outside the input field or tabs away from
+              it, the blur event occurs. It is highly effective for instant form
+              validation, such as checking if the entered email is valid right
+              after the user leaves the field[cite: 135].
+            </p>
+            <h3>Code Example</h3>
+            <div class="code-window">
+              <div class="code-header">
+                <div class="mac-dots">
+                  <div class="dot dot-red"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-green"></div>
+                </div>
+                <button class="copy-btn">Copy</button>
+              </div>
+              <pre><code>&lt;<span class="tag">script</span>&gt;
+  function handleBlur() {
+    var x = document.getElementById("fname");
+    alert("Hi " + x.value);
+  }
+&lt;/<span class="tag">script</span>&gt;
+&lt;<span class="tag">body</span>&gt;
+  Enter your name: &lt;<span class="tag">input</span> <span class="attr">type</span>=<span class="val">"text"</span> <span class="attr">id</span>=<span class="val">"fname"</span> <span class="attr">onblur</span>=<span class="val">"handleBlur()"</span> /&gt;
+&lt;/<span class="tag">body</span>&gt;</code></pre>
+            </div>
+            <h3>Visual Example</h3>
+            <div
+              class="preview-window"
+              style="
+                background-color: #f8fafc;
+                border: 1px solid #e2e8f0;
+                border-radius: 8px;
+                padding: 16px;
+              "
+            >
+              <span class="preview-label">Browser Output Preview</span>
+              <label
+                style="color: #1c2540; font-weight: bold; margin-right: 8px"
+                >Enter name & click outside:</label
+              >
+              <input
+                type="text"
+                id="preview-blur"
+                placeholder="John Doe"
+                style="
+                  padding: 8px;
+                  border: 1px solid #2563eb;
+                  border-radius: 8px;
+                  outline: none;
+                "
+              />
+              <p
+                id="blur-msg"
+                style="
+                  color: #2a5bd7;
+                  margin-top: 8px;
+                  font-weight: bold;
+                  height: 20px;
+                "
+              ></p>
+
+              <script>
+                (function () {
+                  const input = document.getElementById("preview-blur");
+                  const msg = document.getElementById("blur-msg");
+                  if (input) {
+                    input.addEventListener("blur", function () {
+                      if (this.value.trim() !== "") {
+                        msg.innerText =
+                          "Hi there, " + this.value + "! (onblur fired)";
+                      } else {
+                        msg.innerText = "Input lost focus but is empty.";
+                      }
+                    });
+                  }
+                })();
+              </script>
+            </div>
+          </div>
+
+          <div id="eventOnchange" class="sub-section">
+            <h4>9.2.3 onchange</h4>
+            <p>
+              The <code class="inline-code">onchange</code> attribute fires when
+              the element's value has been fully changed and committed[cite:
+              136]. For dropdown menus (<code class="inline-code"
+                >&lt;select&gt;</code
+              >), it triggers immediately after a new option is chosen. For text
+              inputs, it triggers when the user finishes typing and leaves the
+              box[cite: 136].
+            </p>
+            <h3>Code Example</h3>
+            <div class="code-window">
+              <div class="code-header">
+                <div class="mac-dots">
+                  <div class="dot dot-red"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-green"></div>
+                </div>
+                <button class="copy-btn">Copy</button>
+              </div>
+              <pre><code>&lt;<span class="tag">select</span> <span class="attr">id</span>=<span class="val">"my-select"</span> <span class="attr">onchange</span>=<span class="val">"eventHandler()"</span>&gt;
+  &lt;<span class="tag">option</span> <span class="attr">value</span>=<span class="val">"Audi"</span>&gt;Audi&lt;/<span class="tag">option</span>&gt;
+  &lt;<span class="tag">option</span> <span class="attr">value</span>=<span class="val">"BMW"</span>&gt;BMW&lt;/<span class="tag">option</span>&gt;
+&lt;/<span class="tag">select</span>&gt;
+&lt;<span class="tag">script</span>&gt;
+  function eventHandler() {
+    var x = document.getElementById("my-select").value;
+    alert("You selected: " + x);
+  }
+&lt;/<span class="tag">script</span>&gt;</code></pre>
+            </div>
+            <h3>Visual Example</h3>
+            <div
+              class="preview-window"
+              style="
+                background-color: #f8fafc;
+                border: 1px solid #e2e8f0;
+                border-radius: 8px;
+                padding: 16px;
+              "
+            >
+              <span class="preview-label">Browser Output Preview</span>
+              <label
+                style="color: #1c2540; font-weight: bold; margin-right: 8px"
+                >Select a Car:</label
+              >
+              <select
+                id="preview-change"
+                style="
+                  padding: 8px;
+                  border: 1px solid #2563eb;
+                  border-radius: 8px;
+                  outline: none;
+                  cursor: pointer;
+                  color: #1c2540;
+                "
+              >
+                <option value="Select...">Select...</option>
+                <option value="Audi">Audi</option>
+                <option value="BMW">BMW</option>
+                <option value="Mercedes">Mercedes</option>
+                <option value="Volvo">Volvo</option>
+              </select>
+              <p
+                id="change-msg"
+                style="
+                  color: #16306b;
+                  margin-top: 10px;
+                  font-weight: bold;
+                  height: 20px;
+                "
+              ></p>
+
+              <script>
+                (function () {
+                  const selectEl = document.getElementById("preview-change");
+                  const msg = document.getElementById("change-msg");
+                  if (selectEl) {
+                    selectEl.addEventListener("change", function () {
+                      msg.innerText =
+                        "Event Triggered! You selected: " + this.value;
+                    });
+                  }
+                })();
+              </script>
+            </div>
+          </div>
+
+          <div id="eventOninput" class="sub-section">
+            <h4>9.2.4 oninput</h4>
+            <p>
+              Unlike <code class="inline-code">onchange</code> which waits until
+              you leave the field, the
+              <code class="inline-code">oninput</code> attribute fires
+              continuously whenever an element gets user input[cite: 136]. It
+              tracks modifications character by character. This makes it perfect
+              for live search filters, word counters, or dynamically updating
+              text on the screen while the user is actively typing[cite: 136,
+              137].
+            </p>
+            <h3>Code Example</h3>
+            <div class="code-window">
+              <div class="code-header">
+                <div class="mac-dots">
+                  <div class="dot dot-red"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-green"></div>
+                </div>
+                <button class="copy-btn">Copy</button>
+              </div>
+              <pre><code>&lt;<span class="tag">p</span>&gt;Write some text into the box!&lt;/<span class="tag">p</span>&gt;
+&lt;<span class="tag">input</span> <span class="attr">type</span>=<span class="val">"text"</span> <span class="attr">id</span>=<span class="val">"my-input"</span> <span class="attr">oninput</span>=<span class="val">"eventHandler()"</span> /&gt;
+&lt;<span class="tag">p</span> <span class="attr">id</span>=<span class="val">"output"</span>&gt;&lt;/<span class="tag">p</span>&gt;
+
+&lt;<span class="tag">script</span>&gt;
+  function eventHandler() {
+    var x = document.getElementById("my-input").value;
+    document.getElementById("output").innerHTML = "You wrote: " + x;
+  }
+&lt;/<span class="tag">script</span>&gt;</code></pre>
+            </div>
+            <h3>Visual Example</h3>
+            <div
+              class="preview-window"
+              style="
+                background-color: #f8fafc;
+                border: 1px solid #e2e8f0;
+                border-radius: 8px;
+                padding: 16px;
+              "
+            >
+              <span class="preview-label">Browser Output Preview</span>
+              <label
+                style="
+                  color: #1c2540;
+                  font-weight: bold;
+                  margin-right: 8px;
+                  display: block;
+                  margin-bottom: 8px;
+                "
+                >Write some text into the box!</label
+              >
+              <input
+                type="text"
+                id="preview-input"
+                placeholder="Start typing..."
+                style="
+                  padding: 8px;
+                  width: 250px;
+                  border: 1px solid #2563eb;
+                  border-radius: 8px;
+                  outline: none;
+                  margin-bottom: 8px;
+                "
+              />
+              <div
+                style="
+                  background-color: #eef3ff;
+                  padding: 10px;
+                  border-radius: 8px;
+                  border: 1px dashed #2a5bd7;
+                "
+              >
+                <p
+                  id="input-msg"
+                  style="
+                    color: #16306b;
+                    font-weight: bold;
+                    margin: 0;
+                    min-height: 20px;
+                  "
+                >
+                  You wrote:
+                </p>
+              </div>
+
+              <script>
+                (function () {
+                  const inputField = document.getElementById("preview-input");
+                  const outputMsg = document.getElementById("input-msg");
+                  if (inputField) {
+                    inputField.addEventListener("input", function () {
+                      outputMsg.innerText = "You wrote: " + this.value;
+                    });
+                  }
+                })();
+              </script>
+            </div>
+          </div>
+        </section>
+
+        <section id="keyboardEvents" class="card">
+          <span class="card-badge">Section 9.3</span>
+          <h1>Keyboard Events</h1>
+          <p>
+            Keyboard events allow you to capture and respond to user
+            keystrokes[cite: 138]. They are essential for creating shortcuts,
+            building games, filtering live data, or transforming input text in
+            real-time as the user types.
+          </p>
+
+          <div id="eventOnkeydown" class="sub-section">
+            <h4>9.3.1 onkeydown</h4>
+            <p>
+              The <code class="inline-code">onkeydown</code> attribute fires the
+              exact moment a user presses a key down on the keyboard[cite: 138].
+              It triggers before the character is even typed into the field.
+              This event is great for detecting special keys like "Enter",
+              "Arrow keys", or catching shortcuts (like Ctrl+C).
+            </p>
+            <h3>Code Example</h3>
+            <div class="code-window">
+              <div class="code-header">
+                <div class="mac-dots">
+                  <div class="dot dot-red"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-green"></div>
+                </div>
+                <button class="copy-btn">Copy</button>
+              </div>
+              <pre><code>&lt;<span class="tag">p</span>&gt;A function is triggered when the user presses a key.&lt;/<span class="tag">p</span>&gt;
+&lt;<span class="tag">input</span> <span class="attr">type</span>=<span class="val">"text"</span> <span class="attr">onkeydown</span>=<span class="val">"eventHandler()"</span> /&gt;
+
+&lt;<span class="tag">script</span>&gt;
+  function eventHandler() {
+    alert("You pressed a key inside the input field");
+  }
+&lt;/<span class="tag">script</span>&gt;</code></pre>
+            </div>
+            <h3>Visual Example</h3>
+            <div
+              class="preview-window"
+              style="
+                background-color: #f8fafc;
+                border: 1px solid #e2e8f0;
+                border-radius: 8px;
+                padding: 16px;
+              "
+            >
+              <span class="preview-label">Browser Output Preview</span>
+              <label
+                style="
+                  color: #1c2540;
+                  font-weight: bold;
+                  margin-right: 8px;
+                  display: block;
+                  margin-bottom: 8px;
+                "
+                >Press any key to see the trigger:</label
+              >
+              <input
+                type="text"
+                id="preview-keydown"
+                placeholder="Press a key..."
+                style="
+                  padding: 8px;
+                  border: 1px solid #2563eb;
+                  border-radius: 8px;
+                  outline: none;
+                "
+              />
+              <p
+                id="keydown-msg"
+                style="
+                  color: #f5a623;
+                  margin-top: 10px;
+                  font-weight: bold;
+                  height: 20px;
+                "
+              ></p>
+
+              <script>
+                (function () {
+                  const input = document.getElementById("preview-keydown");
+                  const msg = document.getElementById("keydown-msg");
+                  if (input) {
+                    input.addEventListener("keydown", function (event) {
+                      msg.innerText =
+                        "Event Triggered! Key down: '" + event.key + "'";
+                      // Clear the message shortly after
+                      setTimeout(() => {
+                        msg.innerText = "";
+                      }, 800);
+                    });
+                  }
+                })();
+              </script>
+            </div>
+          </div>
+
+          <div id="eventOnkeyup" class="sub-section">
+            <h4>9.3.2 onkeyup</h4>
+            <p>
+              The <code class="inline-code">onkeyup</code> attribute fires when
+              the user releases a key on the keyboard[cite: 138]. By the time
+              this event runs, the character is already inside the input field.
+              This makes it perfect for formatting text (like
+              auto-capitalization) or triggering a live search filter based on
+              the final typed word[cite: 138].
+            </p>
+            <h3>Code Example</h3>
+            <div class="code-window">
+              <div class="code-header">
+                <div class="mac-dots">
+                  <div class="dot dot-red"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-green"></div>
+                </div>
+                <button class="copy-btn">Copy</button>
+              </div>
+              <pre><code>&lt;<span class="tag">p</span>&gt;This function transforms the character to upper case on release.&lt;/<span class="tag">p</span>&gt;
+Enter your name: &lt;<span class="tag">input</span> <span class="attr">type</span>=<span class="val">"text"</span> <span class="attr">id</span>=<span class="val">"fname"</span> <span class="attr">onkeyup</span>=<span class="val">"eventHandler()"</span> /&gt;
+
+&lt;<span class="tag">script</span>&gt;
+  function eventHandler() {
+    var x = document.getElementById("fname");
+    x.value = x.value.toUpperCase();
+  }
+&lt;/<span class="tag">script</span>&gt;</code></pre>
+            </div>
+            <h3>Visual Example</h3>
+            <div
+              class="preview-window"
+              style="
+                background-color: #f8fafc;
+                border: 1px solid #e2e8f0;
+                border-radius: 8px;
+                padding: 16px;
+              "
+            >
+              <span class="preview-label">Browser Output Preview</span>
+              <label
+                style="
+                  color: #1c2540;
+                  font-weight: bold;
+                  margin-right: 8px;
+                  display: block;
+                  margin-bottom: 8px;
+                "
+                >Type lowercase, see it become UPPERCASE:</label
+              >
+              <input
+                type="text"
+                id="preview-keyup"
+                placeholder="type lowercase..."
+                style="
+                  padding: 8px;
+                  border: 1px solid #2563eb;
+                  border-radius: 8px;
+                  outline: none;
+                  width: 200px;
+                "
+              />
+              <p
+                id="keyup-msg"
+                style="
+                  color: #2a5bd7;
+                  margin-top: 10px;
+                  font-weight: bold;
+                  height: 20px;
+                "
+              ></p>
+
+              <script>
+                (function () {
+                  const input = document.getElementById("preview-keyup");
+                  const msg = document.getElementById("keyup-msg");
+                  if (input) {
+                    input.addEventListener("keyup", function () {
+                      this.value = this.value.toUpperCase();
+                      msg.innerText = "Text auto-capitalized!";
+                      setTimeout(() => {
+                        msg.innerText = "";
+                      }, 1000);
+                    });
+                  }
+                })();
+              </script>
+            </div>
+          </div>
+
+          <div id="eventOnkeypress" class="sub-section">
+            <h4>9.3.3 onkeypress</h4>
+            <p>
+              The <code class="inline-code">onkeypress</code> attribute fires
+              when a user presses a key that produces a character value (like
+              letters or numbers)[cite: 139].
+              <i
+                >Note: In modern web development, this event is considered
+                deprecated, and developers are encouraged to use
+                <code>onkeydown</code> or <code>oninput</code> instead.</i
+              >
+            </p>
+            <h3>Code Example</h3>
+            <div class="code-window">
+              <div class="code-header">
+                <div class="mac-dots">
+                  <div class="dot dot-red"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-green"></div>
+                </div>
+                <button class="copy-btn">Copy</button>
+              </div>
+              <pre><code>&lt;<span class="tag">input</span> <span class="attr">type</span>=<span class="val">"text"</span> <span class="attr">onkeypress</span>=<span class="val">"eventHandler()"</span> /&gt;
+
+&lt;<span class="tag">script</span>&gt;
+  function eventHandler() {
+    alert("You pressed a key inside the input field");
+  }
+&lt;/<span class="tag">script</span>&gt;</code></pre>
+            </div>
+            <h3>Visual Example</h3>
+            <div
+              class="preview-window"
+              style="
+                background-color: #f8fafc;
+                border: 1px solid #e2e8f0;
+                border-radius: 8px;
+                padding: 16px;
+              "
+            >
+              <span class="preview-label">Browser Output Preview</span>
+              <label
+                style="
+                  color: #1c2540;
+                  font-weight: bold;
+                  margin-right: 8px;
+                  display: block;
+                  margin-bottom: 8px;
+                "
+                >Try pressing character keys:</label
+              >
+              <input
+                type="text"
+                id="preview-keypress"
+                placeholder="Press a key..."
+                style="
+                  padding: 8px;
+                  border: 1px solid #2563eb;
+                  border-radius: 8px;
+                  outline: none;
+                "
+              />
+              <p
+                id="keypress-msg"
+                style="
+                  color: #16306b;
+                  margin-top: 10px;
+                  font-weight: bold;
+                  height: 20px;
+                "
+              ></p>
+
+              <script>
+                (function () {
+                  const input = document.getElementById("preview-keypress");
+                  const msg = document.getElementById("keypress-msg");
+                  if (input) {
+                    input.addEventListener("keypress", function (event) {
+                      msg.innerText =
+                        "Keypressed: character '" + event.key + "' generated.";
+                      setTimeout(() => {
+                        msg.innerText = "";
+                      }, 800);
+                    });
+                  }
+                })();
+              </script>
+            </div>
+          </div>
+        </section>
+
+        <section id="mouseEvents" class="card">
+          <span class="card-badge">Section 9.4</span>
+          <h1>Mouse Events</h1>
+          <p>
+            Mouse events are triggered when the user interacts with the webpage
+            using a mouse[cite: 140]. These events are widely used to create
+            interactive buttons, custom hover effects, drag-and-drop features,
+            and dynamic UI controls.
+          </p>
+
+          <div id="eventOnclick" class="sub-section">
+            <h4>9.4.1 onclick</h4>
+            <p>
+              The <code class="inline-code">onclick</code> attribute fires the
+              moment a user clicks on an element[cite: 140]. It is the most
+              common mouse event, used heavily for form submissions, opening
+              modals, toggling menus, or confirming actions.
+            </p>
+            <h3>Code Example</h3>
+            <div class="code-window">
+              <div class="code-header">
+                <div class="mac-dots">
+                  <div class="dot dot-red"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-green"></div>
+                </div>
+                <button class="copy-btn">Copy</button>
+              </div>
+              <pre><code>&lt;<span class="tag">button</span> <span class="attr">onclick</span>=<span class="val">"eventHandler()"</span>&gt;Click me&lt;/<span class="tag">button</span>&gt;
+
+&lt;<span class="tag">script</span>&gt;
+  function eventHandler() {
+    alert("You clicked the button");
+  }
+&lt;/<span class="tag">script</span>&gt;</code></pre>
+            </div>
+            <h3>Visual Example</h3>
+            <div
+              class="preview-window"
+              style="
+                background-color: #f8fafc;
+                border: 1px solid #e2e8f0;
+                border-radius: 8px;
+                padding: 16px;
+              "
+            >
+              <span class="preview-label">Browser Output Preview</span>
+              <button
+                id="preview-click-btn"
+                style="
+                  background-color: #2563eb;
+                  color: #ffffff;
+                  padding: 10px 20px;
+                  border: none;
+                  border-radius: 8px;
+                  font-weight: bold;
+                  cursor: pointer;
+                  transition: 0.3s;
+                "
+              >
+                Click Me
+              </button>
+              <p
+                id="click-msg"
+                style="
+                  color: #16306b;
+                  margin-top: 12px;
+                  font-weight: bold;
+                  height: 20px;
+                "
+              ></p>
+
+              <script>
+                (function () {
+                  const btn = document.getElementById("preview-click-btn");
+                  const msg = document.getElementById("click-msg");
+                  if (btn) {
+                    btn.addEventListener("click", function () {
+                      msg.innerText =
+                        "Button clicked successfully! (onclick fired)";
+                      setTimeout(() => {
+                        msg.innerText = "";
+                      }, 1500);
+                    });
+                  }
+                })();
+              </script>
+            </div>
+          </div>
+
+          <div id="eventOndblclick" class="sub-section">
+            <h4>9.4.2 ondblclick</h4>
+            <p>
+              The <code class="inline-code">ondblclick</code> attribute fires on
+              a mouse double-click on the element[cite: 141]. This is useful for
+              actions that require a deliberate double confirmation from the
+              user, similar to opening a file on a desktop operating system.
+            </p>
+            <h3>Code Example</h3>
+            <div class="code-window">
+              <div class="code-header">
+                <div class="mac-dots">
+                  <div class="dot dot-red"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-green"></div>
+                </div>
+                <button class="copy-btn">Copy</button>
+              </div>
+              <pre><code>&lt;<span class="tag">button</span> <span class="attr">ondblclick</span>=<span class="val">"eventHandler()"</span>&gt;Double Click me&lt;/<span class="tag">button</span>&gt;
+
+&lt;<span class="tag">script</span>&gt;
+  function eventHandler() {
+    alert("You double-clicked the button");
+  }
+&lt;/<span class="tag">script</span>&gt;</code></pre>
+            </div>
+            <h3>Visual Example</h3>
+            <div
+              class="preview-window"
+              style="
+                background-color: #f8fafc;
+                border: 1px solid #e2e8f0;
+                border-radius: 8px;
+                padding: 16px;
+              "
+            >
+              <span class="preview-label">Browser Output Preview</span>
+              <button
+                id="preview-dblclick-btn"
+                style="
+                  background-color: #2a5bd7;
+                  color: #ffffff;
+                  padding: 10px 20px;
+                  border: none;
+                  border-radius: 8px;
+                  font-weight: bold;
+                  cursor: pointer;
+                "
+              >
+                Double Click Me
+              </button>
+              <p
+                id="dblclick-msg"
+                style="
+                  color: #f5a623;
+                  margin-top: 12px;
+                  font-weight: bold;
+                  height: 20px;
+                "
+              ></p>
+
+              <script>
+                (function () {
+                  const btn = document.getElementById("preview-dblclick-btn");
+                  const msg = document.getElementById("dblclick-msg");
+                  if (btn) {
+                    btn.addEventListener("dblclick", function () {
+                      msg.innerText =
+                        "Wow! You double-clicked it! (ondblclick fired)";
+                      setTimeout(() => {
+                        msg.innerText = "";
+                      }, 2000);
+                    });
+                    btn.addEventListener("click", function () {
+                      if (msg.innerText === "") {
+                        msg.innerText = "(Waiting for a second click...)";
+                      }
+                    });
+                  }
+                })();
+              </script>
+            </div>
+          </div>
+
+          <div id="eventOnmousemove" class="sub-section">
+            <h4>9.4.3 onmousemove</h4>
+            <p>
+              The <code class="inline-code">onmousemove</code> attribute fires
+              repeatedly as long as the mouse pointer is moving while it is over
+              an element[cite: 142]. This event is heavily used in drawing
+              applications (like Canvas) or tracking the cursor to display
+              custom tooltips[cite: 142].
+            </p>
+            <h3>Code Example</h3>
+            <div class="code-window">
+              <div class="code-header">
+                <div class="mac-dots">
+                  <div class="dot dot-red"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-green"></div>
+                </div>
+                <button class="copy-btn">Copy</button>
+              </div>
+              <pre><code>&lt;<span class="tag">p</span> <span class="attr">onmousemove</span>=<span class="val">"enlarge(this)"</span>&gt;Move mouse over me!&lt;/<span class="tag">p</span>&gt;
+
+&lt;<span class="tag">script</span>&gt;
+  function enlarge(x) {
+    x.style["font-size"] = "24px";
+  }
+&lt;/<span class="tag">script</span>&gt;</code></pre>
+            </div>
+            <h3>Visual Example</h3>
+            <div
+              class="preview-window"
+              style="
+                background-color: #f8fafc;
+                border: 1px solid #e2e8f0;
+                border-radius: 8px;
+                padding: 16px;
+              "
+            >
+              <span class="preview-label">Browser Output Preview</span>
+              <div
+                id="preview-mousemove-box"
+                style="
+                  background-color: #eef3ff;
+                  border: 2px dashed #2563eb;
+                  border-radius: 8px;
+                  padding: 20px;
+                  text-align: center;
+                  color: #1c2540;
+                  font-weight: bold;
+                  cursor: crosshair;
+                "
+              >
+                Move your mouse pointer inside this box!
+              </div>
+              <p
+                id="mousemove-msg"
+                style="
+                  color: #16306b;
+                  margin-top: 12px;
+                  font-weight: bold;
+                  height: 20px;
+                  text-align: center;
+                "
+              ></p>
+
+              <script>
+                (function () {
+                  const box = document.getElementById("preview-mousemove-box");
+                  const msg = document.getElementById("mousemove-msg");
+                  let moveCount = 0;
+                  if (box) {
+                    box.addEventListener("mousemove", function (e) {
+                      moveCount++;
+                      msg.innerText =
+                        "Pointer is moving... Coordinates: X(" +
+                        e.offsetX +
+                        ") Y(" +
+                        e.offsetY +
+                        ") | Count: " +
+                        moveCount;
+                    });
+                    box.addEventListener("mouseleave", function () {
+                      msg.innerText = "Pointer left the box.";
+                      moveCount = 0;
+                    });
+                  }
+                })();
+              </script>
+            </div>
+          </div>
+
+          <div id="eventOnmousedownUp" class="sub-section">
+            <h4>9.4.4 onmousedown and onmouseup</h4>
+            <p>
+              These two events break down a click into its two phases.
+              <code class="inline-code">onmousedown</code> fires the moment a
+              mouse button is pressed down, and
+              <code class="inline-code">onmouseup</code> fires when the button
+              is released[cite: 143]. Combining them allows you to create
+              drag-and-drop systems or custom button pressing animations.
+            </p>
+            <h3>Code Example</h3>
+            <div class="code-window">
+              <div class="code-header">
+                <div class="mac-dots">
+                  <div class="dot dot-red"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-green"></div>
+                </div>
+                <button class="copy-btn">Copy</button>
+              </div>
+              <pre><code>&lt;<span class="tag">p</span> <span class="attr">id</span>=<span class="val">"p1"</span> <span class="attr">onmousedown</span>=<span class="val">"mouseDown()"</span> <span class="attr">onmouseup</span>=<span class="val">"mouseUp()"</span>&gt;
+  Click and hold this text!
+&lt;/<span class="tag">p</span>&gt;
+
+&lt;<span class="tag">script</span>&gt;
+  function mouseDown() {
+    document.getElementById("p1").style.color = "red";
+  }
+  function mouseUp() {
+    document.getElementById("p1").style.color = "blue";
+  }
+&lt;/<span class="tag">script</span>&gt;</code></pre>
+            </div>
+            <h3>Visual Example</h3>
+            <div
+              class="preview-window"
+              style="
+                background-color: #f8fafc;
+                border: 1px solid #e2e8f0;
+                border-radius: 8px;
+                padding: 16px;
+              "
+            >
+              <span class="preview-label">Browser Output Preview</span>
+              <button
+                id="preview-mousedown-btn"
+                style="
+                  background-color: #1c2540;
+                  color: #ffffff;
+                  padding: 12px 24px;
+                  border: none;
+                  border-radius: 8px;
+                  font-weight: bold;
+                  cursor: pointer;
+                  user-select: none;
+                "
+              >
+                Press and Hold Me!
+              </button>
+              <p
+                id="mousedown-msg"
+                style="
+                  color: #5b6580;
+                  margin-top: 12px;
+                  font-weight: bold;
+                  height: 20px;
+                "
+              ></p>
+
+              <script>
+                (function () {
+                  const btn = document.getElementById("preview-mousedown-btn");
+                  const msg = document.getElementById("mousedown-msg");
+                  if (btn) {
+                    btn.addEventListener("mousedown", function () {
+                      this.style.backgroundColor = "#f5a623"; // Amber
+                      this.style.transform = "scale(0.95)";
+                      msg.innerText = "Mouse button is PRESSED (onmousedown)";
+                    });
+                    btn.addEventListener("mouseup", function () {
+                      this.style.backgroundColor = "#2563eb"; // Primary Blue
+                      this.style.transform = "scale(1)";
+                      msg.innerText = "Mouse button is RELEASED (onmouseup)";
+                    });
+                    btn.addEventListener("mouseleave", function () {
+                      this.style.backgroundColor = "#1c2540"; // Reset
+                      this.style.transform = "scale(1)";
+                      if (msg.innerText.includes("PRESSED")) {
+                        msg.innerText = "";
+                      }
+                    });
+                  }
+                })();
+              </script>
+            </div>
+          </div>
+          <div id="eventOnmouseoverOut" class="sub-section">
+            <h4>9.4.5 onmouseover and onmouseout</h4>
+            <p>
+              The <code class="inline-code">onmouseover</code> attribute fires
+              when the mouse pointer moves over an element, and
+              <code class="inline-code">onmouseout</code> fires when the mouse
+              pointer leaves it[cite: 144]. This is the JavaScript equivalent of
+              the CSS <code class="inline-code">:hover</code> pseudo-class,
+              giving you the power to change styles, images, or structure
+              dynamically on hover[cite: 144].
+            </p>
+            <h3>Code Example</h3>
+            <div class="code-window">
+              <div class="code-header">
+                <div class="mac-dots">
+                  <div class="dot dot-red"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-green"></div>
+                </div>
+                <button class="copy-btn">Copy</button>
+              </div>
+              <pre><code>&lt;<span class="tag">p</span> <span class="attr">onmouseover</span>=<span class="val">"increaseFontSize(this)"</span> <span class="attr">onmouseout</span>=<span class="val">"decreaseFontSize(this)"</span>&gt;
+  Hover over me!
+&lt;/<span class="tag">p</span>&gt;
+
+&lt;<span class="tag">script</span>&gt;
+  function increaseFontSize(x) {
+    x.style["font-size"] = "32px";
+  }
+  function decreaseFontSize(x) {
+    x.style["font-size"] = "20px";
+  }
+&lt;/<span class="tag">script</span>&gt;</code></pre>
+            </div>
+            <h3>Visual Example</h3>
+            <div
+              class="preview-window"
+              style="
+                background-color: #f8fafc;
+                border: 1px solid #e2e8f0;
+                border-radius: 8px;
+                padding: 16px;
+                text-align: center;
+              "
+            >
+              <span class="preview-label">Browser Output Preview</span>
+              <div
+                id="preview-hover-box"
+                style="
+                  display: inline-block;
+                  background-color: #eff6ff;
+                  color: #2563eb;
+                  border: 2px solid #2563eb;
+                  border-radius: 8px;
+                  padding: 20px;
+                  font-weight: bold;
+                  transition: 0.3s;
+                  cursor: pointer;
+                "
+              >
+                Hover over me!
+              </div>
+
+              <script>
+                (function () {
+                  const box = document.getElementById("preview-hover-box");
+                  if (box) {
+                    box.addEventListener("mouseover", function () {
+                      this.style.backgroundColor = "#16306b";
+                      this.style.color = "#ffffff";
+                      this.style.transform = "scale(1.1)";
+                      this.innerText = "Awesome! (onmouseover)";
+                    });
+                    box.addEventListener("mouseout", function () {
+                      this.style.backgroundColor = "#eff6ff";
+                      this.style.color = "#2563eb";
+                      this.style.transform = "scale(1)";
+                      this.innerText = "Hover over me!";
+                    });
+                  }
+                })();
+              </script>
+            </div>
+          </div>
+        </section>
+
+        <section id="clipboardEvents" class="card">
+          <span class="card-badge">Section 9.5</span>
+          <h1>Clipboard Events</h1>
+          <p>
+            Clipboard events allow you to detect when a user copies, cuts, or
+            pastes content within an element on your webpage. These are
+            extremely useful for formatting data on paste, preventing copying of
+            sensitive text, or showing custom alerts.
+          </p>
+
+          <div id="eventOncopy" class="sub-section">
+            <h4>9.5.1 oncopy</h4>
+            <p>
+              The <code class="inline-code">oncopy</code> attribute fires when
+              the user copies the content of an element[cite: 145]. There are
+              two common ways to copy the content: pressing CTRL + C or
+              right-clicking to select the "Copy" command[cite: 145].
+            </p>
+            <h3>Code Example</h3>
+            <div class="code-window">
+              <div class="code-header">
+                <div class="mac-dots">
+                  <div class="dot dot-red"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-green"></div>
+                </div>
+                <button class="copy-btn">Copy</button>
+              </div>
+              <pre><code>&lt;<span class="tag">input</span> <span class="attr">type</span>=<span class="val">"text"</span> <span class="attr">oncopy</span>=<span class="val">"eventHandler()"</span> <span class="attr">value</span>=<span class="val">"Try to copy this text"</span> /&gt;
+
+&lt;<span class="tag">script</span>&gt;
+  function eventHandler() {
+    alert("You copied the text.");
+  }
+&lt;/<span class="tag">script</span>&gt;</code></pre>
+            </div>
+            <h3>Visual Example</h3>
+            <div
+              class="preview-window"
+              style="
+                background-color: #f8fafc;
+                border: 1px solid #e2e8f0;
+                border-radius: 8px;
+                padding: 16px;
+              "
+            >
+              <span class="preview-label">Browser Output Preview</span>
+              <label
+                style="
+                  color: #1c2540;
+                  font-weight: bold;
+                  margin-right: 8px;
+                  display: block;
+                  margin-bottom: 8px;
+                "
+                >Select & Copy (CTRL+C) the text below:</label
+              >
+              <input
+                type="text"
+                id="preview-copy"
+                value="Try to copy this text!"
+                style="
+                  padding: 8px;
+                  border: 1px solid #2563eb;
+                  border-radius: 8px;
+                  outline: none;
+                  width: 250px;
+                  color: #0f172a;
+                "
+              />
+              <p
+                id="copy-msg"
+                style="
+                  color: #2563eb;
+                  margin-top: 10px;
+                  font-weight: bold;
+                  height: 20px;
+                "
+              ></p>
+
+              <script>
+                (function () {
+                  const input = document.getElementById("preview-copy");
+                  const msg = document.getElementById("copy-msg");
+                  if (input) {
+                    input.addEventListener("copy", function () {
+                      msg.innerText =
+                        "Text Copied Successfully! (oncopy fired)";
+                      setTimeout(() => {
+                        msg.innerText = "";
+                      }, 2000);
+                    });
+                  }
+                })();
+              </script>
+            </div>
+          </div>
+
+          <div id="eventOncut" class="sub-section">
+            <h4>9.5.2 oncut</h4>
+            <p>
+              The <code class="inline-code">oncut</code> attribute fires when
+              the user cuts the content of an element[cite: 146]. This usually
+              happens by pressing CTRL + X or right-clicking and selecting the
+              "Cut" command[cite: 146].
+            </p>
+            <h3>Code Example</h3>
+            <div class="code-window">
+              <div class="code-header">
+                <div class="mac-dots">
+                  <div class="dot dot-red"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-green"></div>
+                </div>
+                <button class="copy-btn">Copy</button>
+              </div>
+              <pre><code>&lt;<span class="tag">input</span> <span class="attr">type</span>=<span class="val">"text"</span> <span class="attr">oncut</span>=<span class="val">"eventHandler()"</span> <span class="attr">value</span>=<span class="val">"Try to cut this text"</span> /&gt;
+
+&lt;<span class="tag">script</span>&gt;
+  function eventHandler() {
+    alert("You cut the text.");
+  }
+&lt;/<span class="tag">script</span>&gt;</code></pre>
+            </div>
+            <h3>Visual Example</h3>
+            <div
+              class="preview-window"
+              style="
+                background-color: #f8fafc;
+                border: 1px solid #e2e8f0;
+                border-radius: 8px;
+                padding: 16px;
+              "
+            >
+              <span class="preview-label">Browser Output Preview</span>
+              <label
+                style="
+                  color: #1c2540;
+                  font-weight: bold;
+                  margin-right: 8px;
+                  display: block;
+                  margin-bottom: 8px;
+                "
+                >Select & Cut (CTRL+X) the text below:</label
+              >
+              <input
+                type="text"
+                id="preview-cut"
+                value="Try to cut this text!"
+                style="
+                  padding: 8px;
+                  border: 1px solid #f5a623;
+                  border-radius: 8px;
+                  outline: none;
+                  width: 250px;
+                  color: #0f172a;
+                "
+              />
+              <p
+                id="cut-msg"
+                style="
+                  color: #f5a623;
+                  margin-top: 10px;
+                  font-weight: bold;
+                  height: 20px;
+                "
+              ></p>
+
+              <script>
+                (function () {
+                  const input = document.getElementById("preview-cut");
+                  const msg = document.getElementById("cut-msg");
+                  if (input) {
+                    input.addEventListener("cut", function () {
+                      msg.innerText = "Text Snipped! (oncut fired)";
+                      setTimeout(() => {
+                        msg.innerText = "";
+                      }, 2000);
+                    });
+                  }
+                })();
+              </script>
+            </div>
+          </div>
+
+          <div id="eventOnpaste" class="sub-section">
+            <h4>9.5.3 onpaste</h4>
+            <p>
+              The <code class="inline-code">onpaste</code> attribute fires when
+              the user pastes some content into an element[cite: 147]. This is
+              done by pressing CTRL + V or right-clicking and selecting the
+              "Paste" command[cite: 147].
+            </p>
+            <h3>Code Example</h3>
+            <div class="code-window">
+              <div class="code-header">
+                <div class="mac-dots">
+                  <div class="dot dot-red"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-green"></div>
+                </div>
+                <button class="copy-btn">Copy</button>
+              </div>
+              <pre><code>&lt;<span class="tag">input</span> <span class="attr">type</span>=<span class="val">"text"</span> <span class="attr">onpaste</span>=<span class="val">"eventHandler()"</span> <span class="attr">placeholder</span>=<span class="val">"Try to paste text in here"</span> /&gt;
+
+&lt;<span class="tag">script</span>&gt;
+  function eventHandler() {
+    alert("You pasted the text.");
+  }
+&lt;/<span class="tag">script</span>&gt;</code></pre>
+            </div>
+            <h3>Visual Example</h3>
+            <div
+              class="preview-window"
+              style="
+                background-color: #f8fafc;
+                border: 1px solid #e2e8f0;
+                border-radius: 8px;
+                padding: 16px;
+              "
+            >
+              <span class="preview-label">Browser Output Preview</span>
+              <label
+                style="
+                  color: #1c2540;
+                  font-weight: bold;
+                  margin-right: 8px;
+                  display: block;
+                  margin-bottom: 8px;
+                "
+                >Paste (CTRL+V) something in the box below:</label
+              >
+              <input
+                type="text"
+                id="preview-paste"
+                placeholder="Paste text here..."
+                style="
+                  padding: 8px;
+                  border: 1px solid #16306b;
+                  border-radius: 8px;
+                  outline: none;
+                  width: 250px;
+                  color: #0f172a;
+                "
+              />
+              <p
+                id="paste-msg"
+                style="
+                  color: #16306b;
+                  margin-top: 10px;
+                  font-weight: bold;
+                  height: 20px;
+                "
+              ></p>
+
+              <script>
+                (function () {
+                  const input = document.getElementById("preview-paste");
+                  const msg = document.getElementById("paste-msg");
+                  if (input) {
+                    input.addEventListener("paste", function (e) {
+                      // Let's even show what they pasted!
+                      let pastedText = (
+                        e.clipboardData || window.clipboardData
+                      ).getData("text");
+                      msg.innerText =
+                        "Pasted: '" + pastedText + "' (onpaste fired)";
+                      setTimeout(() => {
+                        msg.innerText = "";
+                      }, 3000);
+                    });
+                  }
+                })();
+              </script>
+            </div>
           </div>
         </section>
       </main>
