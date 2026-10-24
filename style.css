@@ -488,13 +488,13 @@ footer li a:hover {
 }
 
 .page-header {
-  background: linear-gradient(135deg, var(--primary-light) 0%, #ffffff 100%);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
   padding: 48px 32px;
   text-align: center;
   margin-bottom: 16px;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   position: relative;
   overflow: hidden;
 }
@@ -504,7 +504,7 @@ footer li a:hover {
   position: absolute;
   font-size: 180px;
   font-weight: 900;
-  color: var(--primary);
+  color: #2563eb;
   opacity: 0.04;
   top: -40px;
   right: -20px;
@@ -515,7 +515,7 @@ footer li a:hover {
 
 .chapter-badge {
   display: inline-block;
-  background-color: var(--primary);
+  background-color: #2563eb;
   color: #ffffff;
   font-size: 0.85rem;
   font-weight: 700;
@@ -531,7 +531,7 @@ footer li a:hover {
 .page-header h1 {
   font-size: 2.2rem;
   font-weight: 800;
-  color: var(--text-main);
+  color: #0f172a;
   margin: 0 0 12px 0;
   line-height: 1.2;
   position: relative;
@@ -541,7 +541,7 @@ footer li a:hover {
 .page-header h2 {
   font-size: 1.1rem;
   font-weight: 400;
-  color: var(--text-muted);
+  color: #475569;
   margin: 0;
   position: relative;
   z-index: 1;
@@ -567,7 +567,7 @@ footer li a:hover {
   width: 4px;
 }
 .sidebar::-webkit-scrollbar-thumb {
-  background-color: var(--border-color);
+  background-color: #e2e8f0;
   border-radius: 4px;
 }
 
@@ -575,7 +575,7 @@ footer li a:hover {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--text-muted);
+  color: #475569;
   margin-bottom: 16px;
   font-weight: 700;
 }
@@ -591,28 +591,28 @@ footer li a:hover {
 
 .sidebar a {
   text-decoration: none;
-  color: var(--text-muted);
+  color: #475569;
   font-size: 0.9rem;
   font-weight: 500;
   padding: 8px 12px;
-  border-radius: var(--radius-md);
+  border-radius: 8px;
   display: block;
   transition: all 0.2s ease;
   border-left: 3px solid transparent;
 }
 
 .sidebar a:hover {
-  color: var(--primary);
-  background-color: var(--primary-light);
-  border-left-color: var(--primary);
+  color: #2563eb;
+  background-color: #eff6ff;
+  border-left-color: #2563eb;
 }
 
 .sidebar a:active,
 .sidebar a.active,
 .sidebar a:target {
-  color: var(--primary);
-  background-color: var(--primary-light);
-  border-left-color: var(--primary);
+  color: #2563eb;
+  background-color: #eff6ff;
+  border-left-color: #2563eb;
 }
 
 /* Sub-section Container */
@@ -629,7 +629,7 @@ footer li a:hover {
   margin-bottom: 8px;
   margin-left: 14px; /* Main section theke ektu dan dike sorano */
   padding-left: 10px;
-  border-left: 2px solid var(--border-color); /* Pashe ekta chikon line */
+  border-left: 2px solid #e2e8f0; /* Pashe ekta chikon line */
 }
 
 /* Sub-section Links */
@@ -643,15 +643,15 @@ footer li a:hover {
 .sidebar ol ul a:hover,
 .sidebar ol ul a:active,
 .sidebar ol ul a.active {
-  color: var(--primary);
-  background-color: var(--primary-light);
-  border-left-color: var(--primary);
+  color: #2563eb;
+  background-color: #eff6ff;
+  border-left-color: #2563eb;
 }
 
 .sidebar ol ul a:target {
-  color: var(--primary);
-  background-color: var(--primary-light);
-  border-left-color: var(--primary);
+  color: #2563eb;
+  background-color: #eff6ff;
+  border-left-color: #2563eb;
 }
 
 /* Main Content Cards */
@@ -663,18 +663,18 @@ footer li a:hover {
 }
 
 .card {
-  background-color: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
+  background-color: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
   padding: 32px;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   scroll-margin-top: 100px;
 }
 
 .card-badge {
   display: inline-block;
-  background-color: var(--primary-light);
-  color: var(--primary);
+  background-color: #eff6ff;
+  color: #2563eb;
   font-size: 0.75rem;
   font-weight: 600;
   padding: 4px 10px;
@@ -686,21 +686,21 @@ footer li a:hover {
   font-size: 1.75rem;
   font-weight: 700;
   margin-bottom: 16px;
-  color: var(--text-main);
+  color: #0f172a;
   line-height: 1.3;
 }
 
 .card h3 {
   font-size: 1.1rem;
   margin: 24px 0 12px;
-  color: var(--text-main);
+  color: #0f172a;
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
 .card p {
-  color: var(--text-muted);
+  color: #475569;
   margin-bottom: 16px;
   line-height: 1.6;
 }
@@ -708,14 +708,14 @@ footer li a:hover {
 .sub-section {
   margin-top: 32px;
   padding-top: 24px;
-  border-top: 1px dashed var(--border-color);
+  border-top: 1px dashed #e2e8f0;
   scroll-margin-top: 110px;
 }
 
 .sub-section h4 {
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--text-main);
+  color: #0f172a;
   margin-bottom: 12px;
 }
 
@@ -729,18 +729,20 @@ code.inline-code {
 }
 
 .code-window {
-  background-color: var(--code-bg);
-  border-radius: var(--radius-md);
+  background-color: #0f172a;
+  border-radius: 8px;
   overflow: hidden;
   margin-top: 16px;
   margin-bottom: 24px;
-  box-shadow: var(--shadow-md);
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
   position: relative;
   width: 100%;
 }
 
 .code-header {
-  background-color: var(--code-header);
+  background-color: #1e293b;
   padding: 10px 16px;
   display: flex;
   justify-content: space-between;
@@ -830,10 +832,10 @@ code.inline-code {
 .preview-window {
   background-color: #f8fafc;
   border: 1px dashed #cbd5e1;
-  border-radius: var(--radius-md);
+  border-radius: 8px;
   padding: 24px;
   margin-top: 16px;
-  color: var(--text-main);
+  color: #0f172a;
 }
 
 .preview-label {
