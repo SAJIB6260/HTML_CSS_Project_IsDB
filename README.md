@@ -4,30 +4,6 @@
 
 **Web Development Crash Course: HTML5 and CSS3**
 
-## PREFACE
-
-- BOOK AUDIENCE
-- HOW TO CONTACT US
-- ACKNOWLEDGMENTS
-- CONVENTIONS USED IN THIS BOOK
-
-## SETTING UP A DEVELOPMENT ENVIRONMENT
-
-- 1.1 INSTALL A CODE EDITOR
-  - 1.1.1 Install Essential Extensions
-  - 1.1.2 Install Live Server
-  - 1.1.3 Setting Default Formatter
-  - 1.1.4 Enable Formatting Code on Save
-  - 1.1.5 Auto Save Files on Focus Change
-  - 1.1.6 Disable Compact Folders
-  - 1.1.7 Enable Word Wrap
-  - 1.1.8 Set Tab Size Smaller
-- 1.2 USING A WEB BROWSER
-  - 1.2.1 Using Developer Tools in The Browser
-  - 1.2.2 Using Console Tool
-  - 1.2.3 Using Source Tool
-- 1.3 PREPARING A WORKSPACE
-
 ## PART I: HTML5
 
 - WHAT WILL YOU LEARN?
@@ -488,10 +464,3 @@
   - 22.5 MOBILE-FIRST VS. DESKTOP-FIRST
     - 22.5.1 Mobile-First
     - 22.5.2 Desktop-First
-
-## EXTRAS
-
-- BONUS: FREE EBOOK DOWNLOAD
-- PLEASE LEAVE A REVIEW ON AMAZON
-- ABOUT THE AUTHOR
-- OTHER BOOKS BY THE AUTHOR
